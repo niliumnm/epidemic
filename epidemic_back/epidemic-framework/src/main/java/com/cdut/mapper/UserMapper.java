@@ -24,6 +24,10 @@ public interface UserMapper extends BaseMapper<User> {
     int update(@Param("user")User user);
 
     Integer deleteByID(@Param("id") Integer id);
+
+    List<User> getUsersByPage(@Param("startIndex") int startIndex,@Param("size") int size);
+
+
 }
 
 

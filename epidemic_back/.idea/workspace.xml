@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="781e32e2-af49-4c44-94f5-deff88a91bdb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/epidemic-common/src/main/java/com/cdut/epidemic_common/utils/AjaxResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/controller/ValidateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/controller/ValidateController.java" afterDir="false" />
-    </list>
+    <list default="true" id="781e32e2-af49-4c44-94f5-deff88a91bdb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -226,7 +221,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661484042002</updated>
       <workItem from="1661484043555" duration="1857000" />
-      <workItem from="1661486078428" duration="7445000" />
+      <workItem from="1661486078428" duration="8683000" />
     </task>
     <servers />
   </component>

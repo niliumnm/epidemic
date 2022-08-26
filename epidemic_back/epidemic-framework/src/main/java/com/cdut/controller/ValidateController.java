@@ -1,5 +1,6 @@
 package com.cdut.controller;
 
+import com.cdut.epidemic_common.utils.AjaxResult;
 import com.google.code.kaptcha.Producer;
 //import com.zlt.utils.RedisUtil;
 import com.cdut.epidemic_common.utils.RedisUtil;
@@ -29,7 +30,7 @@ public class ValidateController {
 
 
     @RequestMapping("kaptcha")
-    public Map<String, Object> getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public AjaxResult getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         //生成验证码
         String capText = captchaProducer.createText();
@@ -57,7 +58,7 @@ public class ValidateController {
         Base64.Encoder encoder = Base64.getEncoder();
         map.put("captcha","data:image/jpg;base64,"+encoder.encodeToString(captcha));
 
-        return map;
+        return AjaxResult.success("验证码生成成功", map);
 
     }
 }

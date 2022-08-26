@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdut.mapper.InRequestMapper">
+
+    <resultMap id="BaseResultMap" type="com.cdut.pojo.InRequest">
+            <id property="requestId" column="request_id" jdbcType="INTEGER"/>
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="temprature" column="temprature" jdbcType="DOUBLE"/>
+            <result property="mask" column="mask" jdbcType="TINYINT"/>
+            <result property="dangerZone" column="danger_zone" jdbcType="TINYINT"/>
+            <result property="healthStatus" column="health_status" jdbcType="INTEGER"/>
+            <result property="summary" column="summary" jdbcType="VARCHAR"/>
+            <result property="time" column="time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        request_id,user_id,temprature,
+        mask,danger_zone,health_status,
+        summary,time
+    </sql>
+</mapper>

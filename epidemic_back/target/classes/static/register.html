@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <input type="text" name="username" placeholder="请输入用户名"><br>
+  <input type="text" name="password" placeholder="请输入密码"><br>
+  <input type="text" name="validateCode" placeholder="请输入验证码"><img src="" onclick="refresh()" id="captcha"><br>
+<input type="button" value="注册">
+</body>
+<script src="js/jquery.1.js"></script>
+<script src="js/md5.js"></script>
+<script>
+  refresh()
+
+  function refresh(){
+    $.ajax({
+      url:"kaptcha",
+      success:function(data,status,xmlhttp){
+        //data代表的是验证码
+        $("#captcha").attr("src",data.captcha);
+        //xmlhttp存储了validatekey
+        // var validateKey = xmlhttp.getResponseHeader("validateKey");
+        //后续这个validateKey还要使用，把可以放入页面的缓存
+        // localStorage.setItem("validateKey",validateKey);
+      }
+    })
+  }
+
+  $("input[type='button']").on('click',function(){
+    console.log("点击了")
+    var originPassword = $("input[name='password']").val();//123456
+    //使用md5加密把原始密码处理后再传递给后台
+    var password = hex_md5(originPassword);//第一次加密，传递给后台的是加密后的密码
+
+    var username = $("input[name='username']").val();
+
+    $.ajax({
+      url:"register",
+      data:{"password":password,"username":username},
+      method:'POST',
+      success:function(data,status,xmlhttp){
+
+      }
+    })
+
+
+  })
+</script>
+</html>

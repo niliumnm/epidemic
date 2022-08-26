@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="781e32e2-af49-4c44-94f5-deff88a91bdb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/DruidConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/InRequestMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/OutRequestMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/ReplyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/VistorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/InRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/OutRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/Reply.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/Vistor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/properties/DruidProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/InRequestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/OutRequestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/ReplyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/VistorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/InRequestServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/OutRequestServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/ReplyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/VistorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/generator/domain/TUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/generator/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/InRequestMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/OutRequestMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/ReplyMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/VistorMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/config/KaptchaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/KaptchaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/controller/ValidateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/controller/ValidateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/pojo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/utils/JWTUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/utils/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-common/src/main/java/com/cdut/epidemic_common/utils/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/utils/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-common/src/main/java/com/cdut/epidemic_common/utils/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cdut/utils/SaltUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/static/js/jquery.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/md5.js" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/static/js/md5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/static/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/test/java/test/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/config/KaptchaConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/config/KaptchaConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/config/RedisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/config/RedisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/config/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/controller/ValidateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/controller/ValidateController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/pojo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/utils/JWTUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/utils/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-common/src/main/java/com/cdut/epidemic_common/utils/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/utils/MD5Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/utils/MD5Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/utils/RedisUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/utils/RedisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/utils/SaltUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cdut/utils/SaltUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-common/src/main/java/com/cdut/epidemic_common/utils/SaltUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/test.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\DevelopEnvironment\apache-maven-3.8.4\maven-repo" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../DevelopEnvironment/apache-maven-3.8.4" />
+        <option name="useMavenConfig" value="true" />
+        <option name="userSettingsFile" value="D:\DevelopEnvironment\apache-maven-3.8.4\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="17" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="17" />
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="2DsNsla6nnW13f7oH5wscJKynMJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../epidemic1" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_back\epidemic-framework\src\main\java\com\cdut\service" />
+      <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_back\epidemic-framework\src\main\java\com\cdut\pojo" />
+      <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_back\epidemic-framework\src\main\java\com\cdut\mapper" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="ApplicationTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="epidemic-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdut" />
+      <option name="MAIN_CLASS_NAME" value="com.cdut.ApplicationTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="epidemic-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdut" />
+      <option name="MAIN_CLASS_NAME" value="com.cdut.Application" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImpl.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="epidemic-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdut.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdut.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.cdut.service.impl.UserServiceImpl" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.testService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="epidemic-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.test" />
+      <option name="METHOD_NAME" value="testService" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="epidemic-framework" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cdut.Application" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EpidemicCommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="epidemic-common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yiqing.epidemic_common.EpidemicCommonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="Spring Boot.EpidemicCommonApplication" />
+      <item itemvalue="JUnit.test.testService" />
+      <item itemvalue="JUnit.ApplicationTest.test" />
+      <item itemvalue="JUnit.Application.test" />
+      <item itemvalue="JUnit.UserServiceImpl.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ApplicationTest.test" />
+        <item itemvalue="JUnit.UserServiceImpl.test" />
+        <item itemvalue="JUnit.Application.test" />
+        <item itemvalue="JUnit.test.testService" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="781e32e2-af49-4c44-94f5-deff88a91bdb" name="Changes" comment="" />
+      <created>1661484042002</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661484042002</updated>
+      <workItem from="1661484043555" duration="1857000" />
+      <workItem from="1661486078428" duration="5581000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

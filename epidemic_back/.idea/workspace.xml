@@ -4,6 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="781e32e2-af49-4c44-94f5-deff88a91bdb" name="Changes" comment="" />
+=======
     <list default="true" id="781e32e2-af49-4c44-94f5-deff88a91bdb" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/DruidConfig.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/InRequestMapper.java" afterDir="false" />
@@ -94,6 +97,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/static/register.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/test/test.class" beforeDir="false" />
     </list>
+>>>>>>> f94ae72d072e13e9f22c59a768a61df3f4631863
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -171,6 +175,23 @@
       <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_back\epidemic-framework\src\main\java\com\cdut\mapper" />
     </key>
   </component>
+<<<<<<< HEAD
+  <component name="RestServicesNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="Found 10 services " type="9abd1fc8:RestServiceStructure$RootNode" />
+        </path>
+        <path>
+          <item name="Found 10 services " type="9abd1fc8:RestServiceStructure$RootNode" />
+          <item name="epidemic-framework" type="296880de:RestServiceStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+=======
+>>>>>>> f94ae72d072e13e9f22c59a768a61df3f4631863
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -296,7 +317,11 @@
       <option name="presentableId" value="Default" />
       <updated>1661484042002</updated>
       <workItem from="1661484043555" duration="1857000" />
+<<<<<<< HEAD
+      <workItem from="1661486078428" duration="8683000" />
+=======
       <workItem from="1661486078428" duration="5581000" />
+>>>>>>> f94ae72d072e13e9f22c59a768a61df3f4631863
     </task>
     <servers />
   </component>

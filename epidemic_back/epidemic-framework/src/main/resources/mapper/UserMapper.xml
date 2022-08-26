@@ -46,6 +46,9 @@
     <select id="getUserByID" resultType="com.cdut.pojo.User">
         select * from t_user where id= #{id}
     </select>
+    <select id="getUsersByPage" resultType="com.cdut.pojo.User">
+        select * from t_user limit #{startIndex},#{size};
+    </select>
 
     <!--    int update(User user);-->
     <update id="update">

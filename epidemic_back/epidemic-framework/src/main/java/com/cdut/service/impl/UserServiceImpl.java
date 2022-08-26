@@ -2,6 +2,7 @@ package com.cdut.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdut.epidemic_common.utils.MD5Util;
+import com.cdut.epidemic_common.utils.Page;
 import com.cdut.pojo.User;
 import com.cdut.service.UserService;
 import com.cdut.mapper.UserMapper;
@@ -56,6 +57,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     @Override
     public Integer deleteByID(Integer id) {
         return userDao.deleteByID(id);
+    }
+
+    @Override
+    public List<User> getUsersByPage(Page page) {
+        // 当前页开始index
+        int startIndex = page.getPageSize()*page.getCurrentPage();
+        return userDao.getUsersByPage(startIndex, page.getPageSize());
     }
 
 }

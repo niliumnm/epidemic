@@ -16,16 +16,17 @@
             <result property="position" column="position" jdbcType="VARCHAR"/>
             <result property="birthday" column="birthday" jdbcType="VARCHAR"/>
             <result property="address" column="address" jdbcType="VARCHAR"/>
-            <result property="weixin" column="weiXin" jdbcType="VARCHAR"/>
+            <result property="idNum" column="id_num" jdbcType="VARCHAR"/>
+            <result property="weixin" column="weixin" jdbcType="VARCHAR"/>
             <result property="qq" column="qq" jdbcType="VARCHAR"/>
             <result property="salt" column="salt" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,password,display_name,
+        id,password,display_name,gender,id_num,
         email,mobile,avatar_url,
         organization,department,position,
-        birthday,address,weiXin,
+        birthday,address,weixin,
         qq,salt
     </sql>
 
@@ -64,7 +65,7 @@
                 mobile=#{user.mobile},
             </if>
             <if test="user.avatarUrl!=null">
-                avatarUrl=#{user.avatar_url},
+                avatar_url=#{user.avatarUrl},
             </if>
             <if test="user.organization!=null">
                 organization=#{user.organization},
@@ -78,14 +79,23 @@
             <if test="user.birthday!=null">
                 birthday=#{user.birthday},
             </if>
-            <if test="user.address!=null">
-                address=#{user.address},
+            <if test="user.home!=null">
+                home=#{user.home},
             </if>
-            <if test="user.weiXin!=null">
-                weiXin=#{user.wei_xin},
+            <if test="user.weixin!=null">
+                weixin=#{user.weixin},
             </if>
             <if test="user.salt!=null">
                 salt=#{user.salt},
+            </if>
+            <if test="user.gender!=null">
+                gender=#{user.gender},
+            </if>
+            <if test="user.idNum!=null">
+                id_num=#{user.idNum},
+            </if>
+            <if test="user.qq!=null">
+                qq=#{user.qq},
             </if>
         </set>
         <where>

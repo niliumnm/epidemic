@@ -37,30 +37,13 @@ public class UserController {
         return AjaxResult.success("所有用户获取成功",userService.getAll());
     }
 
-    @Operation(description = "新建用户")
-    @RequestMapping(value = "/User", method = POST)
-    public AjaxResult insertUser(User user) {
-        return AjaxResult.success("新建成功",new User());
-    }
+
 
     @Operation(description = "删除用户")
     @DeleteMapping(value = "/user/{id}")
     public AjaxResult delete(@PathVariable Integer id) {
         if(id==null||id<=0) return AjaxResult.error("删除失败",-0);
         return AjaxResult.success("删除成功",userService.deleteByID(id));
-    }
-
-    @Operation(description = "用户登出")
-    @RequestMapping(value = "/user/logout", method = POST)
-    public AjaxResult logout(User user) {
-        return AjaxResult.success("登出成功",new User());
-    }
-
-    @Operation(description = "修改用户")
-    @RequestMapping(value = "/user/{id}", method = PUT)
-    public AjaxResult modifyUser(User user, @PathVariable("id") Integer userId) {
-        System.out.println(userId);
-        return AjaxResult.success("修改成功" ,new User());
     }
 
     @Operation(description = "用户登录")
@@ -111,8 +94,11 @@ public class UserController {
     }
 
     @Operation(description = "更新用户")
-    @RequestMapping(value = "/register",method = PUT)
-    public AjaxResult upDate(@RequestBody User user){
+    @RequestMapping(value = "/register", method = PUT)
+    public AjaxResult upDate(@RequestBody User user) {
+//        //不允许用这个接口改密码
+//        user.setPassword(null);
+//        user.setSalt(null);
 
         if (user.getId() <= 0) {
             return AjaxResult.error("不存在该用户", -1);
@@ -122,8 +108,15 @@ public class UserController {
         return AjaxResult.success("更新成功", i);
     }
 
+    @Operation(description = "ID查用户")
+    @RequestMapping(value = "//user/{id}", method = GET)
+    AjaxResult getUserById(@PathVariable("id") Integer id) {
+        return AjaxResult.success("获取成功", userService.getUserByID(id));
+    }
+
     @RequestMapping("/test")
-    public AjaxResult test(User user){
+    public AjaxResult test(User user) {
+
         return AjaxResult.success("测试成功", new User());
     }
 }

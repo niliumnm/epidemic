@@ -25,11 +25,8 @@ public class OutRequest implements Serializable {
      * 用户名
      */
     private Integer userId;
-
-    /**
-     * 身份证号
-     */
     private String idNum;
+
 
     /**
      * 体温
@@ -93,8 +90,8 @@ public class OutRequest implements Serializable {
         OutRequest other = (OutRequest) that;
         return (this.getRequestId() == null ? other.getRequestId() == null : this.getRequestId().equals(other.getRequestId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-            && (this.getIdNum() == null ? other.getIdNum() == null : this.getIdNum().equals(other.getIdNum()))
             && (this.getTemprature() == null ? other.getTemprature() == null : this.getTemprature().equals(other.getTemprature()))
+            && (this.getIdNum() == null ? other.getIdNum() == null : this.getIdNum().equals(other.getIdNum()))
             && (this.getMask() == null ? other.getMask() == null : this.getMask().equals(other.getMask()))
             && (this.getTrack() == null ? other.getTrack() == null : this.getTrack().equals(other.getTrack()))
             && (this.getHealthStatus() == null ? other.getHealthStatus() == null : this.getHealthStatus().equals(other.getHealthStatus()))
@@ -111,8 +108,8 @@ public class OutRequest implements Serializable {
         int result = 1;
         result = prime * result + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
-        result = prime * result + ((getIdNum() == null) ? 0 : getIdNum().hashCode());
         result = prime * result + ((getTemprature() == null) ? 0 : getTemprature().hashCode());
+        result = prime * result + ((getIdNum() == null) ? 0 : getIdNum().hashCode());
         result = prime * result + ((getMask() == null) ? 0 : getMask().hashCode());
         result = prime * result + ((getTrack() == null) ? 0 : getTrack().hashCode());
         result = prime * result + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
@@ -132,10 +129,10 @@ public class OutRequest implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", requestId=").append(requestId);
         sb.append(", userId=").append(userId);
-        sb.append(", idNum=").append(idNum);
         sb.append(", temprature=").append(temprature);
         sb.append(", mask=").append(mask);
         sb.append(", track=").append(track);
+        sb.append(", idNum=").append(idNum);
         sb.append(", healthStatus=").append(healthStatus);
         sb.append(", summary=").append(summary);
         sb.append(", home=").append(home);

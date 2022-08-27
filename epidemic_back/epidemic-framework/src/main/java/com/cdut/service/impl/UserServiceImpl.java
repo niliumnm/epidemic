@@ -42,9 +42,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     @Override
     public int update(User user) {
         //二次加密
-        String password = user.getPassword();
-        String salt = getUserByID(user.getId()).getSalt();
-        user.setPassword( MD5Util.formPassToDBPass(password, salt));
+        if(user.getPassword()!=null){
+            String password = user.getPassword();
+            String salt = getUserByID(user.getId()).getSalt();
+            user.setPassword( MD5Util.formPassToDBPass(password, salt));
+        }
+
         return userDao.update(user);
     }
 

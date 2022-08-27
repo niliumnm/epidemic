@@ -2,6 +2,7 @@ package com.cdut.mapper;
 
 import com.cdut.pojo.Vistor;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author 47345
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2022-08-26 13:04:12
 * @Entity com.cdut.pojo.Vistor
 */
+@Mapper
 public interface VistorMapper extends BaseMapper<Vistor> {
 
 }

@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="epidemic-common" />
+        <module name="epidemic-admin" />
         <module name="epidemic-framework" />
       </profile>
     </annotationProcessing>
@@ -15,6 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="epidemic-admin" options="" />
       <module name="epidemic-common" options="" />
     </option>
   </component>

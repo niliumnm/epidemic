@@ -2,6 +2,7 @@ package com.cdut.mapper;
 
 import com.cdut.pojo.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 * @createDate 2022-08-26 13:04:12
 * @Entity com.cdut.pojo.User
 */
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
     List<User> getAll();
 

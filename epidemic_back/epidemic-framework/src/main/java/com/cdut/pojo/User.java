@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 
 /**
  * 
@@ -23,6 +24,7 @@ public class User implements Serializable {
     /**
      * 
      */
+    @JsonIgnore
     private String password;
 
     /**

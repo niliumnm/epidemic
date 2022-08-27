@@ -97,4 +97,12 @@
     <delete id="deleteByID">
         delete from t_user where id=#{id}
     </delete>
+
+
+<!--    &lt;!&ndash;List<User> selectPage(@Param("pageNum") Integer pageNum, @Param("pageSize") Integer pageSize, @Param("name") String name);&ndash;&gt;-->
+<!--    <select id="selectPage" resultType="com.cdut.pojo.User">-->
+<!--        Select * from t_user limit #{pageNum},#{pageSize}-->
+<!--    </select>-->
+
+
 </mapper>

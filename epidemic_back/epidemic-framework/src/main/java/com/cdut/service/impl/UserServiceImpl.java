@@ -6,7 +6,6 @@ import com.cdut.epidemic_common.utils.Page;
 import com.cdut.pojo.User;
 import com.cdut.service.UserService;
 import com.cdut.mapper.UserMapper;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,7 @@ import java.util.List;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     implements UserService{
 
-    @Autowired
+    @Autowired(required = false)
     private UserMapper userDao;
 
     @Override
@@ -62,10 +61,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     @Override
     public List<User> getUsersByPage(Page page) {
         // 当前页开始index
-        int startIndex = page.getPageSize()*page.getCurrentPage();
+        int startIndex = page.getPageSize()*(page.getCurrentPage()-1);
         return userDao.getUsersByPage(startIndex, page.getPageSize());
     }
-
 }
 
 

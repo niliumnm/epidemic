@@ -32,12 +32,12 @@ public class InRequest implements Serializable {
     private Double temprature;
 
     /**
-     * 是否佩戴口罩
+     * 是否佩戴口罩 1 戴了 2 未戴
      */
     private Integer mask;
 
     /**
-     * 是否到过疫区
+     * 是否到过疫区 1. 到过 2. 未到过 应该是Bool 生成器转成int了 凑合用
      */
     private Integer dangerZone;
 

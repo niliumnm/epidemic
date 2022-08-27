@@ -5,14 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="781e32e2-af49-4c44-94f5-deff88a91bdb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/epidemic-common/src/main/java/com/cdut/epidemic_common/utils/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-admin/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-admin/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/EpidemicAdminApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-admin/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-admin/src/test/java/com/cdut/EpidemicAdminApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/application-framework.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/KaptchaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/config/KaptchaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/controller/ValidateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/ValidateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/InRequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/InRequestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/OutRequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/OutRequestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/ReplyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/ReplyMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/generator/domain/TUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/generator/domain/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/test/java/com/cdut/ApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/test/java/com/cdut/ApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/VistorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/VistorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/test/java/com/cdut/ApplicationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +71,7 @@
     </option>
   </component>
   <component name="MavenRunner">
-    <option name="jreName" value="17" />
+    <option name="jreName" value="corretto-1.8" />
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="2DsNsla6nnW13f7oH5wscJKynMJ" />
@@ -77,16 +92,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
+    <property name="jdk.selected.JAVA_MODULE" value="temurin-18" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../epidemic1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReactorSettings">
@@ -98,6 +113,9 @@
       <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_back\epidemic-framework\src\main\java\com\cdut\pojo" />
       <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_back\epidemic-framework\src\main\java\com\cdut\mapper" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_back\epidemic-admin\src\main\resources" />
+    </key>
   </component>
   <component name="RestServicesNavigator">
     <treeState>
@@ -107,7 +125,7 @@
         </path>
         <path>
           <item name="Found 10 services " type="9abd1fc8:RestServiceStructure$RootNode" />
-          <item name="epidemic-framework" type="296880de:RestServiceStructure$ProjectNode" />
+          <item name="epidemic-admin" type="296880de:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
       <select />
@@ -120,7 +138,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationTest.test">
+  <component name="RunManager" selected="Spring Boot.EpidemicAdminApplication">
     <configuration name="ApplicationTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="epidemic-framework" />
       <extension name="coverage">
@@ -148,6 +166,22 @@
       <option name="PACKAGE_NAME" value="com.cdut" />
       <option name="MAIN_CLASS_NAME" value="com.cdut.Application" />
       <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EpidemicAdminApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="epidemic-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cdut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cdut" />
+      <option name="MAIN_CLASS_NAME" value="com.cdut.EpidemicAdminApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -205,6 +239,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EpidemicAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="epidemic-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cdut.EpidemicAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EpidemicCommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="epidemic-common" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.yiqing.epidemic_common.EpidemicCommonApplication" />
@@ -219,9 +260,12 @@
       <item itemvalue="JUnit.UserServiceImpl.test" />
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.EpidemicCommonApplication" />
+      <item itemvalue="Spring Boot.EpidemicAdminApplication" />
+      <item itemvalue="JUnit.EpidemicAdminApplicationTests.contextLoads" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EpidemicAdminApplicationTests.contextLoads" />
         <item itemvalue="JUnit.ApplicationTest.test" />
         <item itemvalue="JUnit.UserServiceImpl.test" />
         <item itemvalue="JUnit.Application.test" />

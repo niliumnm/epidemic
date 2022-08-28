@@ -17,8 +17,9 @@
 
     function refresh(){
         $.ajax({
-            url:"kaptcha",
+            url:"http://localhost:8088/kaptcha",
             success:function(data,status,xmlhttp){
+                alert(data.captcha);
                 //data代表的是验证码
                 $("#captcha").attr("src",data.captcha);
                 //xmlhttp存储了validatekey

@@ -7,12 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="epidemic-common" />
+        <module name="epidemic-admin" />
+        <module name="epidemic-framework" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="epidemic-framework" target="8" />
-      <module name="epidemic_back" target="8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

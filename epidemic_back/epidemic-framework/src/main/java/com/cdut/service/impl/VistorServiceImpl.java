@@ -1,10 +1,17 @@
 package com.cdut.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.cdut.mapper.UserMapper;
+import com.cdut.pojo.OutRequest;
+import com.cdut.pojo.User;
 import com.cdut.pojo.Vistor;
 import com.cdut.service.VistorService;
 import com.cdut.mapper.VistorMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
 * @author 47345
@@ -14,7 +21,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class VistorServiceImpl extends ServiceImpl<VistorMapper, Vistor>
     implements VistorService{
+    @Autowired
+    UserMapper userMapper;
+    @Autowired
+    VistorMapper vistorMapper;
 
+    public Integer postRequest(Vistor vistorRequest) {
+        User user = userMapper.getUserByID(vistorRequest.getUserId());
+        vistorRequest.setName(user.getDisplayName());
+        vistorRequest.setGender(user.getGender());
+        vistorRequest.setMobile(user.getMobile());
+        vistorRequest.setIdNum(user.getIdNum());
+        vistorRequest.setHome(user.getHome());
+        return vistorMapper.insert(vistorRequest);
+    }
+
+    public List<Vistor> getAllVisById(Integer userid) {
+        QueryWrapper<Vistor> listQueryWrapper = new QueryWrapper<>();
+        listQueryWrapper.eq("user_id", userid);
+        return vistorMapper.selectList(listQueryWrapper);
+    }
 }
 
 

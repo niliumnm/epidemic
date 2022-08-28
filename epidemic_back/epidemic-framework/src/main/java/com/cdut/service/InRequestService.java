@@ -1,5 +1,6 @@
 package com.cdut.service;
 
+import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.pojo.InRequest;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -9,5 +10,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2022-08-26 13:04:11
 */
 public interface InRequestService extends IService<InRequest> {
+
+    AjaxResult postRequest(InRequest inRequest);
 
 }

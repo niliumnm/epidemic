@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdut.epidemicsystem.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.cdut.epidemicsystem.pojo.User">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="displayName" column="display_name" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+            <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
+            <result property="organization" column="organization" jdbcType="VARCHAR"/>
+            <result property="department" column="department" jdbcType="VARCHAR"/>
+            <result property="position" column="position" jdbcType="VARCHAR"/>
+            <result property="birthday" column="birthday" jdbcType="VARCHAR"/>
+            <result property="idNum" column="id_num" jdbcType="VARCHAR"/>
+            <result property="weixin" column="weixin" jdbcType="VARCHAR"/>
+            <result property="qq" column="qq" jdbcType="VARCHAR"/>
+            <result property="salt" column="salt" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,password,display_name,gender,id_num,
+        email,mobile,avatar_url,
+        organization,department,position,
+        birthday,address,weixin,
+        qq,salt
+    </sql>
+
+    <select id="getAll" resultType="com.cdut.epidemicsystem.pojo.User">
+        select * from t_user
+    </select>
+    <!--    User findByName(String username);-->
+    <select id="findByName" resultType="com.cdut.epidemicsystem.pojo.User">
+        select * from t_user where display_name='${username}'
+    </select>
+
+    <!--        User insert(User user);-->
+    <insert id="insert">
+        insert into t_user (display_name,password,salt)values (#{user.displayName},#{user.password},#{user.salt})
+    </insert>
+
+    <!--        String getUserByID(int id);-->
+    <select id="getUserByID" resultType="com.cdut.epidemicsystem.pojo.User">
+        select * from t_user where id= #{id}
+    </select>
+    <select id="getUsersByPage" resultType="com.cdut.epidemicsystem.pojo.User">
+        select * from t_user limit #{startIndex},#{size};
+    </select>
+
+    <!--    int update(User user);-->
+    <update id="update">
+        update  t_user
+        <set>
+            <if test="user.displayName!=null">
+                display_name=#{user.displayName},
+            </if>
+            <if test="user.email!=null">
+                email=#{user.email},
+            </if>
+            <if test="user.mobile!=null">
+                mobile=#{user.mobile},
+            </if>
+            <if test="user.avatarUrl!=null">
+                avatar_url=#{user.avatarUrl},
+            </if>
+            <if test="user.organization!=null">
+                organization=#{user.organization},
+            </if>
+            <if test="user.department!=null">
+                department=#{user.department},
+            </if>
+            <if test="user.position!=null">
+                position=#{user.position},
+            </if>
+            <if test="user.birthday!=null">
+                birthday=#{user.birthday},
+            </if>
+            <if test="user.home!=null">
+                home=#{user.home},
+            </if>
+            <if test="user.weixin!=null">
+                weixin=#{user.weixin},
+            </if>
+            <if test="user.salt!=null">
+                salt=#{user.salt},
+            </if>
+            <if test="user.gender!=null">
+                gender=#{user.gender},
+            </if>
+            <if test="user.idNum!=null">
+                id_num=#{user.idNum},
+            </if>
+            <if test="user.qq!=null">
+                qq=#{user.qq},
+            </if>
+        </set>
+        <where>
+            id= #{user.id}
+        </where>
+    </update>
+
+    <!--Integer deleteByID(@Param("id") Integer id);-->
+    <delete id="deleteByID">
+        delete from t_user where id=#{id}
+    </delete>
+
+</mapper>

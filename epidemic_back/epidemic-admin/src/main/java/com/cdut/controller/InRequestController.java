@@ -2,9 +2,9 @@ package com.cdut.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cdut.epidemic_common.utils.AjaxResult;
-import com.cdut.pojo.InRequest;
-import com.cdut.service.InRequestService;
-import com.cdut.service.UserService;
+import com.cdut.epidemicsystem.pojo.InRequest;
+import com.cdut.epidemicsystem.service.InRequestService;
+import com.cdut.epidemicsystem.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.cdut.epidemic_common.utils.AjaxResult.Type.ERROR;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController

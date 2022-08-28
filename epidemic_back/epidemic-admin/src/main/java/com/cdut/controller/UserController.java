@@ -2,14 +2,14 @@ package com.cdut.controller;
 
 
 import com.cdut.epidemic_common.utils.*;
-import com.cdut.pojo.User;
+import com.cdut.epidemicsystem.pojo.User;
+import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
 
 import com.cdut.epidemic_common.utils.JWTUtil;
 import com.cdut.epidemic_common.utils.MD5Util;
 import com.cdut.epidemic_common.utils.RedisUtil;
 import com.cdut.epidemic_common.utils.SaltUtils;
 
-import com.cdut.service.impl.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.apache.ibatis.annotations.Param;

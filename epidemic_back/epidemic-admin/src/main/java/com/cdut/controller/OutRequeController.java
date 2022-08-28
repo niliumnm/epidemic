@@ -1,9 +1,9 @@
 package com.cdut.controller;
 
 import com.cdut.epidemic_common.utils.AjaxResult;
-import com.cdut.pojo.OutRequest;
-import com.cdut.service.impl.OutRequestServiceImpl;
-import com.cdut.service.impl.UserServiceImpl;
+import com.cdut.epidemicsystem.pojo.OutRequest;
+import com.cdut.epidemicsystem.service.impl.OutRequestServiceImpl;
+import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

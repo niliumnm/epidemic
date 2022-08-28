@@ -17,7 +17,7 @@ mybatis:
   type-aliases-package: com.cdut.pojo
 spring:
   profiles:
-    include: framework
+    include: framework,system
   redis:
     database: 0
     host: 175.178.92.208

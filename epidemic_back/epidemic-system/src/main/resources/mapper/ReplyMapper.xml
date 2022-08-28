@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdut.epidemicsystem.mapper.ReplyMapper">
+
+    <resultMap id="BaseResultMap" type="com.cdut.epidemicsystem.pojo.Reply">
+            <id property="repId" column="rep_id" jdbcType="INTEGER"/>
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+            <result property="time" column="time" jdbcType="TIMESTAMP"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+            <result property="healthStatue" column="health_statue" jdbcType="INTEGER"/>
+            <result property="mask" column="mask" jdbcType="INTEGER"/>
+            <result property="summary" column="summary" jdbcType="VARCHAR"/>
+            <result property="passed" column="passed" jdbcType="TINYINT"/>
+            <result property="temprature" column="temprature" jdbcType="DOUBLE"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        rep_id,user_id,name,
+        mobile,time,type,
+        health_statue,mask,summary,
+        passed,temprature
+    </sql>
+</mapper>

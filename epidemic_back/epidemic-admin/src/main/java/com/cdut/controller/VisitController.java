@@ -1,8 +1,8 @@
 package com.cdut.controller;
 
 import com.cdut.epidemic_common.utils.AjaxResult;
-import com.cdut.pojo.Vistor;
-import com.cdut.service.impl.VistorServiceImpl;
+import com.cdut.epidemicsystem.pojo.Vistor;
+import com.cdut.epidemicsystem.service.impl.VistorServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

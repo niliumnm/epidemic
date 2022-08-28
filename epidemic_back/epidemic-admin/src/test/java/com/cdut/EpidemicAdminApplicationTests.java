@@ -1,6 +1,7 @@
 package com.cdut;
 
-import com.cdut.service.impl.UserServiceImpl;
+
+import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

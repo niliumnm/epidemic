@@ -11,6 +11,7 @@
         <module>epidemic-framework</module>
         <module>epidemic-common</module>
         <module>epidemic-admin</module>
+        <module>epidemic-system</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -78,6 +79,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--dev tools-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
     </dependencies>

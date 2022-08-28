@@ -1,19 +1,15 @@
 package com.cdut.controller;
 
 import com.cdut.epidemic_common.utils.AjaxResult;
-import com.cdut.pojo.*;
-import com.cdut.service.ReplyService;
-import com.cdut.service.impl.ReplyServiceImpl;
-import com.cdut.service.impl.UserServiceImpl;
+import com.cdut.epidemicsystem.pojo.*;
+import com.cdut.epidemicsystem.service.impl.ReplyServiceImpl;
+import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Objects;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;

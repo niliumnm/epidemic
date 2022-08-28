@@ -26,6 +26,12 @@ public class InRequest implements Serializable {
      */
     private Integer userId;
 
+    private String name;
+    private String gender;
+    private String mobile;
+    private String idNum;
+    private String home;
+
     /**
      * 体温
      */
@@ -73,6 +79,11 @@ public class InRequest implements Serializable {
         InRequest other = (InRequest) that;
         return (this.getRequestId() == null ? other.getRequestId() == null : this.getRequestId().equals(other.getRequestId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
+            && (this.getGender() == null ? other.getGender() == null : this.getGender().equals(other.getGender()))
+            && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
+            && (this.getIdNum() == null ? other.getIdNum() == null : this.getIdNum().equals(other.getIdNum()))
+            && (this.getHome() == null ? other.getHome() == null : this.getHome().equals(other.getHome()))
             && (this.getTemprature() == null ? other.getTemprature() == null : this.getTemprature().equals(other.getTemprature()))
             && (this.getMask() == null ? other.getMask() == null : this.getMask().equals(other.getMask()))
             && (this.getDangerZone() == null ? other.getDangerZone() == null : this.getDangerZone().equals(other.getDangerZone()))
@@ -87,6 +98,11 @@ public class InRequest implements Serializable {
         int result = 1;
         result = prime * result + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
+        result = prime * result + ((getGender() == null) ? 0 : getGender().hashCode());
+        result = prime * result + ((getMobile() == null) ? 0 : getMobile().hashCode());
+        result = prime * result + ((getIdNum() == null) ? 0 : getIdNum().hashCode());
+        result = prime * result + ((getHome() == null) ? 0 : getHome().hashCode());
         result = prime * result + ((getTemprature() == null) ? 0 : getTemprature().hashCode());
         result = prime * result + ((getMask() == null) ? 0 : getMask().hashCode());
         result = prime * result + ((getDangerZone() == null) ? 0 : getDangerZone().hashCode());
@@ -104,6 +120,11 @@ public class InRequest implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", requestId=").append(requestId);
         sb.append(", userId=").append(userId);
+        sb.append(", name=").append(name);
+        sb.append(", gender=").append(gender);
+        sb.append(", mobile=").append(mobile);
+        sb.append(", idNum=").append(idNum);
+        sb.append(", home=").append(home);
         sb.append(", temprature=").append(temprature);
         sb.append(", mask=").append(mask);
         sb.append(", dangerZone=").append(dangerZone);

@@ -29,7 +29,7 @@ public class ValidateController {
 
 
 
-    @RequestMapping("kaptcha")
+    @RequestMapping("/user/kaptcha")
     public AjaxResult getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         //生成验证码

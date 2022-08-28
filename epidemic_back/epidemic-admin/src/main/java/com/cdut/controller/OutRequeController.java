@@ -3,6 +3,7 @@ package com.cdut.controller;
 import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.pojo.OutRequest;
 import com.cdut.service.impl.OutRequestServiceImpl;
+import com.cdut.service.impl.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,17 @@ public class OutRequeController {
     @Autowired
     OutRequestServiceImpl outRequestService;
 
+    @Autowired
+    UserServiceImpl userService;
+
     @Operation(description = "发送出门请求")
     @RequestMapping(value = "/out/post", method = POST)
     AjaxResult postRequest(@RequestBody OutRequest outRequest) {
         if (outRequest.getTemprature() == null || outRequest.getMask() == null || outRequest.getTrack() == null || outRequest.getHealthStatus() == null) {
             return AjaxResult.error("请完整填写表单");
+        }
+        if (userService.getUserByID(outRequest.getUserId()) == null) {
+            return AjaxResult.error("用户ID不存在!");
         }
         if (outRequest.getUserId() != null) {
             return AjaxResult.success("请求成功",outRequestService.postRequest(outRequest));

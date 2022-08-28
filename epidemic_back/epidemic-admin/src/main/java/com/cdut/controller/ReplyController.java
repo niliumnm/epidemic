@@ -4,6 +4,7 @@ import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.pojo.*;
 import com.cdut.service.ReplyService;
 import com.cdut.service.impl.ReplyServiceImpl;
+import com.cdut.service.impl.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,47 +23,58 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class ReplyController {
     @Autowired
     ReplyServiceImpl replyService;
+    @Autowired
+    UserServiceImpl userService;
 
     @Operation(description = "回复请求")
     @RequestMapping(value = "/rep/rep", method = POST)
-    AjaxResult postRequest(@RequestParam("userId") Integer userId,
-                           @RequestParam("passed") Integer passed,
+    AjaxResult postRequest(@RequestParam("passed") Integer passed,
                            @RequestParam("summary") String summary,
                            @RequestParam("type") Integer type,
                            @RequestParam("requestId") Integer requestId) {
         Reply reply = new Reply();
-        reply.setUserId(userId);
+        Integer userId=0;
         reply.setType(type);
         reply.setPassed(passed);
         reply.setSummary(summary);
-        User userById = replyService.getUserById(userId);
-        reply.setName(userById.getDisplayName());
-        reply.setMobile(userById.getMobile());
+
 
         //HealthStatue
 
         Integer heathStatus=0;
         Integer mask = 0;
         Double temprature= 0.1;
+        Integer requestID = 0;
         if (type == 1) {
             InRequest inRequest = replyService.getInRequest(requestId);
             heathStatus= inRequest.getHealthStatus();
             mask = inRequest.getMask();
             temprature = inRequest.getTemprature();
+            userId = inRequest.getUserId();
+            requestID = inRequest.getRequestId();
         } else if (type==2) {
             OutRequest outRequest = replyService.getOutRequest(requestId);
             heathStatus=outRequest.getHealthStatus();
             mask=outRequest.getMask();
             temprature = outRequest.getTemprature();
+            userId = outRequest.getUserId();
+            requestID = outRequest.getRequestId();
         } else if (type==3) {
             Vistor visRequest = replyService.getVisRequest(requestId);
             heathStatus= visRequest.getHealthStatus();
             mask = visRequest.getMask();
             temprature = visRequest.getTemprature();
+            userId = visRequest.getUserId();
+            requestID = visRequest.getRequestId();
         }
+        User userById = replyService.getUserById(userId);
+        reply.setName(userById.getDisplayName());
+        reply.setMobile(userById.getMobile());
         reply.setHealthStatue(heathStatus);
         reply.setMask(mask);
         reply.setTemprature(temprature);
+        reply.setUserId(userId);
+        reply.setRequestId(requestID);
 
         return AjaxResult.success("回复成功", replyService.save(reply));
     }

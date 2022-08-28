@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.pojo.InRequest;
 import com.cdut.service.InRequestService;
+import com.cdut.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +21,18 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 public class InRequestController {
     @Autowired
     InRequestService inRequestService;
+    @Autowired
+    UserService userService;
 
     @Operation(description = "发送进门请求")
     @RequestMapping(value = "/in/post", method = POST)
     AjaxResult postRequest(@RequestBody InRequest inRequest) {
         if (inRequest.getUserId() != null) {
+            if (userService.getUserByID(inRequest.getUserId()) == null) {
+                return AjaxResult.error("用户ID不存在!");
+            }
             return inRequestService.postRequest(inRequest);
-        }
-        return AjaxResult.error("请求错误");
+        } return AjaxResult.error("请求错误");
     }
 
     @Operation(description = "撤销进门请求")

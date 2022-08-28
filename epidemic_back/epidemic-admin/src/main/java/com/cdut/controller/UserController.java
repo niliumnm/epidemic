@@ -42,13 +42,16 @@ public class UserController {
     @Operation(description = "删除用户")
     @DeleteMapping(value = "/user/{id}")
     public AjaxResult delete(@PathVariable Integer id) {
-        if(id==null||id<=0) return AjaxResult.error("删除失败",-0);
-        return AjaxResult.success("删除成功",userService.deleteByID(id));
+        if(id==null||id<=0) return AjaxResult.error("用户ID非法");
+        if (userService.deleteByID(id) == 0) {
+            return AjaxResult.success("数据库中无该记录");
+        }
+        return AjaxResult.success("用户删除成功");
     }
 
     @Operation(description = "用户登录")
-    @RequestMapping(value = "/login", method = POST)
-    public AjaxResult login(HttpServletResponse response, String username, String password, String validateCode, @RequestHeader String validateKey) {
+    @RequestMapping(value = "/user/login", method = POST)
+    public AjaxResult login(HttpServletResponse response, @RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("validateCode") String validateCode, @RequestHeader String validateKey) {
         String validateCodeRedis = (String) redisUtil.get(validateKey);
         System.out.println("1:"+validateCodeRedis);
         System.out.println("2:"+validateCode);
@@ -61,7 +64,7 @@ public class UserController {
                 if (finPassword.equals(user.getPassword())) {
                     String token = JWTUtil.sign(user.getDisplayName(), user.getPassword());
                     response.setHeader("token", token);
-                    return AjaxResult.success("登录成功");
+                    return AjaxResult.success("登录成功",userService.getUserDto(user));
                 } else {
                     return AjaxResult.error("密码错误");
                 }
@@ -76,10 +79,16 @@ public class UserController {
     }
 
     @Operation(description = "用户注册")
-    @RequestMapping(value = "/register",method = POST)
+    @RequestMapping(value = "/user/register",method = POST)
     public AjaxResult register(@Param("username")String username,@Param("password")String password){
+        //禁止重名注册
+        if (userService.getUserByName(username) != null) {
+            return AjaxResult.error("用户名已存在");
+        }
+
         User user = new User();
         user.setDisplayName(username);
+        System.out.println("一次加密: " + password);
         System.out.println(username);
         user.setPassword(password);
 
@@ -89,6 +98,7 @@ public class UserController {
 
         user.setPassword( MD5Util.formPassToDBPass(password, salt));
         System.out.println(user.toString());
+
 
         return AjaxResult.success("注册成功", userService.register(user));
     }
@@ -111,12 +121,10 @@ public class UserController {
     @Operation(description = "ID查用户")
     @RequestMapping(value = "//user/{id}", method = GET)
     AjaxResult getUserById(@PathVariable("id") Integer id) {
-        return AjaxResult.success("获取成功", userService.getUserByID(id));
-    }
-
-    @RequestMapping("/test")
-    public AjaxResult test(User user) {
-
-        return AjaxResult.success("测试成功", new User());
+        User userByID = userService.getUserByID(id);
+        if (userByID == null) {
+            return AjaxResult.error("该用户不存在");
+        }
+        return AjaxResult.success("获取成功", userByID);
     }
 }

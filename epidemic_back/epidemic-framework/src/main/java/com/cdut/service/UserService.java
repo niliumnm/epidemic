@@ -1,9 +1,9 @@
 package com.cdut.service;
 
 import com.cdut.epidemic_common.utils.Page;
-import com.cdut.mapper.UserMapper;
 import com.cdut.pojo.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cdut.pojo.dto.UserDto;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public interface UserService extends IService<User>{
 
     User findByName(String username);
 
-    int register(User user);
+    UserDto register(User user);
     int update(User user);
 
     User getUserByID(int id);

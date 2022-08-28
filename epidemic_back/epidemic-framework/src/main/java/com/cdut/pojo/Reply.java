@@ -45,6 +45,7 @@ public class Reply implements Serializable {
      * 1进2出3外来
      */
     private Integer type;
+    private Integer requestId;
 
     /**
      * 1健康2发热
@@ -90,6 +91,7 @@ public class Reply implements Serializable {
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
             && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
+            && (this.getRequestId() == null ? other.getRequestId() == null : this.getRequestId().equals(other.getRequestId()))
             && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()))
             && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()))
             && (this.getHealthStatue() == null ? other.getHealthStatue() == null : this.getHealthStatue().equals(other.getHealthStatue()))
@@ -107,6 +109,7 @@ public class Reply implements Serializable {
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
         result = prime * result + ((getMobile() == null) ? 0 : getMobile().hashCode());
+        result = prime * result + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         result = prime * result + ((getTime() == null) ? 0 : getTime().hashCode());
         result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         result = prime * result + ((getHealthStatue() == null) ? 0 : getHealthStatue().hashCode());
@@ -126,6 +129,7 @@ public class Reply implements Serializable {
         sb.append(", repId=").append(repId);
         sb.append(", userId=").append(userId);
         sb.append(", name=").append(name);
+        sb.append(", requestId=").append(requestId);
         sb.append(", mobile=").append(mobile);
         sb.append(", time=").append(time);
         sb.append(", type=").append(type);

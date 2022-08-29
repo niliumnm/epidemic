@@ -1,6 +1,7 @@
 package com.cdut.controller;
 
 import com.cdut.epidemic_common.utils.AjaxResult;
+import com.cdut.epidemicsystem.pojo.InRequest;
 import com.cdut.epidemicsystem.pojo.OutRequest;
 import com.cdut.epidemicsystem.service.impl.OutRequestServiceImpl;
 import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
@@ -55,5 +56,12 @@ public class OutRequeController {
         List<OutRequest> res = outRequestService.list();
         return AjaxResult.success("查询成功", res);
     }
+
+    @Operation(description = "根据ID更新出门请求")
+    @RequestMapping(value = "/out/update/", method = POST)
+    AjaxResult updateById(@RequestBody OutRequest outRequest) {
+        return AjaxResult.success("更新成功,如果记录不存在则被创建", outRequestService.saveOrUpdate(outRequest));
+    }
+
 
 }

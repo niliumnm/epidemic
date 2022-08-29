@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="epidemic-common" />
+        <module name="epidemic-system" />
         <module name="epidemic-admin" />
         <module name="epidemic-framework" />
       </profile>

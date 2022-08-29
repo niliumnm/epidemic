@@ -273,15 +273,15 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Database Script.epidemic (1).sql" />
       <item itemvalue="JUnit.ApplicationTest.test" />
       <item itemvalue="JUnit.EpidemicAdminApplicationTests.contextLoads" />
+      <item itemvalue="JUnit.EpidemicSystemApplicationTests.contextLoads" />
+      <item itemvalue="JUnit.EpidemicSystemApplicationTests" />
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.EpidemicCommonApplication" />
       <item itemvalue="Spring Boot.EpidemicAdminApplication" />
       <item itemvalue="Spring Boot.EpidemicSystemApplication" />
-      <item itemvalue="Database Script.epidemic (1).sql" />
-      <item itemvalue="JUnit.EpidemicSystemApplicationTests.contextLoads" />
-      <item itemvalue="JUnit.EpidemicSystemApplicationTests" />
     </list>
     <recent_temporary>
       <list>

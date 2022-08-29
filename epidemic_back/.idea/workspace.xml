@@ -4,51 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="781e32e2-af49-4c44-94f5-deff88a91bdb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/epidemic-system/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-system/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-system/src/main/resources/application-system.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-system/src/main/resources/sql/epidemic (1).sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/InRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/InRequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/OutRequeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/OutRequeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/ReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/ReplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/java/com/cdut/controller/VisitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-admin/src/test/java/com/cdut/EpidemicAdminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-admin/src/test/java/com/cdut/EpidemicAdminApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/config/DruidConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/InRequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/mapper/InRequestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/OutRequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/mapper/OutRequestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/ReplyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/mapper/ReplyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/mapper/VistorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/mapper/VistorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/InRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/pojo/InRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/OutRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/pojo/OutRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/Reply.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/pojo/Reply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/Vistor.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/pojo/Vistor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/pojo/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/pojo/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/properties/DruidProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/properties/DruidProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/InRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/InRequestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/OutRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/OutRequestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/ReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/ReplyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/VistorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/VistorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/InRequestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/InRequestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/OutRequestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/OutRequestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/ReplyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/ReplyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/java/com/cdut/service/impl/VistorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/VistorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/application-framework.yml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/src/main/resources/application-framework.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/InRequestMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/resources/mapper/InRequestMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/OutRequestMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/resources/mapper/OutRequestMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/ReplyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/resources/mapper/ReplyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/main/resources/mapper/VistorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/src/main/resources/mapper/VistorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/src/test/java/test/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="435a1ef3-7056-4f24-9fab-a49e6096526a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -26,6 +26,9 @@ public class InRequestController {
     @Operation(description = "发送进门请求")
     @RequestMapping(value = "/in/post", method = POST)
     AjaxResult postRequest(@RequestBody InRequest inRequest) {
+        if (inRequest.getTemprature()==null||inRequest.getHealthStatus()==null||inRequest.getMask()==null||inRequest.getDangerZone()==null) {
+            return AjaxResult.error("请完整填写表单");
+        }
         if (inRequest.getUserId() != null) {
             if (userService.getUserByID(inRequest.getUserId()) == null) {
                 return AjaxResult.error("用户ID不存在!");
@@ -58,4 +61,11 @@ public class InRequestController {
         List<InRequest> list = inRequestService.list(queryWrapper);
         return AjaxResult.success("查询成功", list);
     }
+
+    @Operation(description = "根据ID更新进门请求")
+    @RequestMapping(value = "/in/update/", method = POST)
+    AjaxResult updateById(@RequestBody InRequest inRequest) {
+        return AjaxResult.success("更新成功,如果记录不存在则被创建", inRequestService.saveOrUpdate(inRequest));
+    }
+
 }

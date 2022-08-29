@@ -4,56 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="435a1ef3-7056-4f24-9fab-a49e6096526a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/main/java/com/cdut/EpidemicSyscontrolAdminApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/main/java/com/cdut/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/main/java/com/cdut/config/KaptchaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/main/java/com/cdut/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/main/java/com/cdut/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/test/java/com/cdut/EpidemicSyscontrolAdminApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-common/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/AjaxResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/JWTUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/MD5Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/RedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/SaltUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-framework/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/filters/JwtAuthenticationTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/services/SysUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-framework/src/main/resources/application-framework.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-framework/src/test/java/com/cdut/epidemicsyscontrolframework/EpidemicSyscontrolFrameworkApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/config/DruidConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/mapper/RoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/mapper/SysUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/mapper/SysUserRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/pojo/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/pojo/SysUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/pojo/SysUserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/properties/DruidProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/service/SysUserRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/service/SysUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/service/impl/SysUserRoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/resources/application-system.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/resources/mapper/SysUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/resources/mapper/SysUserRoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/test/java/com/cdut/epidemicsyscontrolsystem/EpidemicSyscontrolSystemApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-system/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="435a1ef3-7056-4f24-9fab-a49e6096526a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

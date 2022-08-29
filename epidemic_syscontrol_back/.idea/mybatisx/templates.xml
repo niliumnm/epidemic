@@ -6,7 +6,7 @@
         <option name="generateConfig">
           <GenerateConfig>
             <option name="annotationType" value="MYBATIS_PLUS3" />
-            <option name="basePackage" value="com.cdut.epidemicsystem" />
+            <option name="basePackage" value="com.cdut.epidemicsyscontrolsystem" />
             <option name="basePath" value="src/main/java" />
             <option name="classNameStrategy" value="camel" />
             <option name="encoding" value="UTF-8" />
@@ -15,8 +15,8 @@
             <option name="ignoreFieldSuffix" value="" />
             <option name="ignoreTablePrefix" value="t_" />
             <option name="ignoreTableSuffix" value="" />
-            <option name="moduleName" value="epidemic-system" />
-            <option name="modulePath" value="$PROJECT_DIR$/epidemic-system" />
+            <option name="moduleName" value="epidemic-syscontrol-system" />
+            <option name="modulePath" value="$PROJECT_DIR$/epidemic-syscontrol-system" />
             <option name="moduleUIInfoList">
               <list>
                 <ModuleInfoGo>
@@ -25,7 +25,7 @@
                   <option name="encoding" value="${domain.encoding}" />
                   <option name="fileName" value="${domain.fileName}Mapper" />
                   <option name="fileNameWithSuffix" value="${domain.fileName}Mapper.java" />
-                  <option name="modulePath" value="$PROJECT_DIR$/epidemic-system" />
+                  <option name="modulePath" value="$PROJECT_DIR$/epidemic-syscontrol-system" />
                   <option name="packageName" value="${domain.basePackage}.mapper" />
                 </ModuleInfoGo>
                 <ModuleInfoGo>
@@ -34,7 +34,7 @@
                   <option name="encoding" value="${domain.encoding}" />
                   <option name="fileName" value="${domain.fileName}Mapper" />
                   <option name="fileNameWithSuffix" value="${domain.fileName}Mapper.xml" />
-                  <option name="modulePath" value="$PROJECT_DIR$/epidemic-system" />
+                  <option name="modulePath" value="$PROJECT_DIR$/epidemic-syscontrol-system" />
                   <option name="packageName" value="mapper" />
                 </ModuleInfoGo>
                 <ModuleInfoGo>
@@ -43,7 +43,7 @@
                   <option name="encoding" value="${domain.encoding}" />
                   <option name="fileName" value="${domain.fileName}ServiceImpl" />
                   <option name="fileNameWithSuffix" value="${domain.fileName}ServiceImpl.java" />
-                  <option name="modulePath" value="$PROJECT_DIR$/epidemic-system" />
+                  <option name="modulePath" value="$PROJECT_DIR$/epidemic-syscontrol-system" />
                   <option name="packageName" value="${domain.basePackage}.service.impl" />
                 </ModuleInfoGo>
                 <ModuleInfoGo>
@@ -52,7 +52,7 @@
                   <option name="encoding" value="${domain.encoding}" />
                   <option name="fileName" value="${domain.fileName}Service" />
                   <option name="fileNameWithSuffix" value="${domain.fileName}Service.java" />
-                  <option name="modulePath" value="$PROJECT_DIR$/epidemic-system" />
+                  <option name="modulePath" value="$PROJECT_DIR$/epidemic-syscontrol-system" />
                   <option name="packageName" value="${domain.basePackage}.service" />
                 </ModuleInfoGo>
               </list>
@@ -81,7 +81,7 @@
             <option name="useLombokPlugin" value="true" />
           </GenerateConfig>
         </option>
-        <option name="moduleName" value="epidemic-system" />
+        <option name="moduleName" value="epidemic-syscontrol-system" />
         <option name="projectPath" value="$PROJECT_DIR$" />
         <option name="templateName" value="mybatis-plus3" />
       </TemplateContext>

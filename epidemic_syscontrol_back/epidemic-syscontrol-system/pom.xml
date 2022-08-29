@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.cdut</groupId>
-        <artifactId>epidemic</artifactId>
+        <artifactId>epidemic_syscontrol_back</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>epidemic-system</artifactId>
-    <name>epidemic-system</name>
-    <description>epidemic-system</description>
+    <artifactId>epidemic-syscontrol-system</artifactId>
+    <name>epidemic-syscontrol-system</name>
+    <description>epidemic-syscontrol-system</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -24,7 +24,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -44,7 +43,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.2</version>
+            <version>3.3.1</version>
         </dependency>
 
 
@@ -90,7 +89,7 @@
 
         <dependency>
             <groupId>com.cdut</groupId>
-            <artifactId>epidemic-common</artifactId>
+            <artifactId>epidemic-syscontrol-common</artifactId>
             <version>${project.version}</version>
         </dependency>
 

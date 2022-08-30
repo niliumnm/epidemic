@@ -4,7 +4,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdut.epidemicsyscontrolsystem.mapper.SysUserRoleMapper;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole;
 import com.cdut.epidemicsyscontrolsystem.service.SysUserRoleService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
 * @author 47345
@@ -15,6 +19,14 @@ import org.springframework.stereotype.Service;
 public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole>
     implements SysUserRoleService {
 
+    @Autowired
+    private SysUserRoleMapper userRoleMapper;
+
+    @Override
+    public List<String> getUserRoles(int id) {
+        List<String> userRoles = userRoleMapper.getUserRoles(id);
+        return userRoles;
+    }
 }
 
 

@@ -1,4 +1,4 @@
-package com.cdut.config;
+package com.cdut.epidemicsyscontrolframework.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

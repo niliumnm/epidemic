@@ -7,10 +7,12 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.util.Date;
 
-/**
- * 生成token和验证token
- */
+import java.util.UUID;
+
 public class JWTUtil {
+    private static final String SECRET = "as$aw&*@1ax#";
+
+
 
     //有效时间
     private static final long EXP = 6*60*60*1000;
@@ -18,9 +20,10 @@ public class JWTUtil {
     //jwt的签发：token：用户名、每个用户有个自己的密钥（用户的秘密）
     //token是使用用户名+用户密码来生成
 
-    public static String sign(String username,String secret){
+    public static String sign(String username){
         Date date = new Date(System.currentTimeMillis()+EXP);//过期时间
-        Algorithm algorithm = Algorithm.HMAC384(secret);
+        Algorithm algorithm = Algorithm.HMAC384(SECRET);
+
         //附带username
         return JWT.create()
                 .withClaim("username",username)
@@ -30,8 +33,9 @@ public class JWTUtil {
     }
 
     //验证当前token是否有效
-    public static boolean verify(String token,String username,String secret){
-        Algorithm algorithm = Algorithm.HMAC384(secret);
+    public static boolean verify(String token,String username){
+        Algorithm algorithm = Algorithm.HMAC384(SECRET);
+
         JWTVerifier verifier = JWT.require(algorithm)
                 .withClaim("username",username).build();
 
@@ -50,11 +54,6 @@ public class JWTUtil {
     public static boolean isExpire(String token){
         DecodedJWT decode = JWT.decode(token);
         return System.currentTimeMillis() >= decode.getExpiresAt().getTime();
-    }
-
-    public static void main(String[] args) {
-        String token = sign("admin","e10adc3949ba59abbe56e057f20f883e");
-        System.out.println(token);
     }
 
 

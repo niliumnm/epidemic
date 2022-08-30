@@ -3,6 +3,10 @@ package com.cdut.epidemicsyscontrolsystem.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
 
 /**
 * @author 47345
@@ -12,6 +16,8 @@ import org.apache.ibatis.annotations.Mapper;
 */
 @Mapper
 public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {
+
+    List<String> getUserRoles(@Param("id") int id);
 
 }
 

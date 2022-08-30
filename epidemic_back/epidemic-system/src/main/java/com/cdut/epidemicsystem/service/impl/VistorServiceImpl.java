@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdut.epidemicsystem.mapper.UserMapper;
 import com.cdut.epidemicsystem.mapper.VistorMapper;
+import com.cdut.epidemicsystem.pojo.InRequest;
 import com.cdut.epidemicsystem.pojo.User;
 import com.cdut.epidemicsystem.service.VistorService;
 import com.cdut.epidemicsystem.pojo.Vistor;
@@ -39,6 +40,19 @@ public class VistorServiceImpl extends ServiceImpl<VistorMapper, Vistor>
         QueryWrapper<Vistor> listQueryWrapper = new QueryWrapper<>();
         listQueryWrapper.eq("user_id", userid);
         return vistorMapper.selectList(listQueryWrapper);
+    }
+
+    public List<Vistor> getPage(Integer pageNum, Integer pageSize, String name) {
+        pageNum = (pageNum - 1) * pageSize;
+        QueryWrapper<Vistor> queryWrapper = new QueryWrapper<>();
+        if (!(name.equals(""))){
+            queryWrapper.like("name", name);
+
+        }
+
+        queryWrapper.last("limit "  + pageNum + ", " + pageSize);
+        List<Vistor> vistorList = vistorMapper.selectList(queryWrapper);
+        return vistorList;
     }
 }
 

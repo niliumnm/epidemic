@@ -1,6 +1,7 @@
 package com.cdut.controller;
 
 import com.cdut.epidemic_common.utils.AjaxResult;
+import com.cdut.epidemicsystem.pojo.InRequest;
 import com.cdut.epidemicsystem.pojo.OutRequest;
 import com.cdut.epidemicsystem.pojo.Vistor;
 import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
@@ -67,6 +68,16 @@ public class VisitController {
     @RequestMapping(value = "/vis/update/", method = POST)
     AjaxResult updateById(@RequestBody Vistor vistor) {
         return AjaxResult.success("更新成功,如果记录不存在则被创建", vistorService.saveOrUpdate(vistor));
+    }
+
+    @GetMapping("/vis/page")
+    public AjaxResult findPage(@RequestParam Integer pageNum,
+                               @RequestParam Integer pageSize,
+                               @RequestParam(defaultValue = "") String name
+    ) {
+
+        List<Vistor> inRequests = vistorService.getPage(pageNum, pageSize, name);
+        return AjaxResult.success(inRequests);
     }
 
 }

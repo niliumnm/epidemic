@@ -7,17 +7,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="epidemic-common" />
         <module name="epidemic-system" />
+        <module name="epidemic-syscontrol-common" />
+        <module name="epidemic-syscontrol-framework" />
+        <module name="epidemic-syscontrol-admin" />
+        <module name="epidemic-syscontrol-system" />
+        <module name="epidemic-common" />
         <module name="epidemic-admin" />
         <module name="epidemic-framework" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="epidemic-framework" options="" />
-      <module name="epidemic_back" options="" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="epidemic" target="1.8" />
+      <module name="epidemic-admin" target="1.8" />
+      <module name="epidemic-common" target="1.8" />
+      <module name="epidemic-framework" target="1.8" />
+      <module name="epidemic-syscontrol-admin" target="1.8" />
+      <module name="epidemic-syscontrol-common" target="1.8" />
+      <module name="epidemic-syscontrol-framework" target="1.8" />
+      <module name="epidemic-syscontrol-system" target="1.8" />
+      <module name="epidemic-system" target="1.8" />
+      <module name="epidemic_syscontrol_back" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

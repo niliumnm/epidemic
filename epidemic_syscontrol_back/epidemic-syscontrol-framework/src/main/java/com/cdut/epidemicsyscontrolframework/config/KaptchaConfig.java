@@ -1,4 +1,4 @@
-package com.cdut.config;
+package com.cdut.epidemicsyscontrolframework.config;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
@@ -9,6 +9,7 @@ import java.util.Properties;
 
 @Configuration
 public class KaptchaConfig {
+
     @Bean
     public DefaultKaptcha getDefaultKaptcha(){
         DefaultKaptcha captchaProducer = new DefaultKaptcha();

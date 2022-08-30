@@ -15,4 +15,7 @@
         user_id,role_id,username,
         role_name
     </sql>
+    <select id="getUserRoles" resultType="java.lang.String">
+        select role_name from t_sys_user_role where user_id=#{id}
+    </select>
 </mapper>

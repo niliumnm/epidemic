@@ -3,7 +3,9 @@ package com.cdut.epidemicsyscontrolsystem.pojo;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -16,7 +18,9 @@ import java.util.Collection;
  */
 @TableName(value ="t_sys_user")
 @Data
-public class SysUser implements Serializable, UserDetails {
+@AllArgsConstructor
+@NoArgsConstructor
+public class SysUser implements Serializable{
     /**
      * 
      */
@@ -38,9 +42,14 @@ public class SysUser implements Serializable, UserDetails {
      */
     private String salt;
 
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
+    public SysUser(int id,String username){
+        this.id = id;
+        this.username = username;
+    }
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -85,45 +94,4 @@ public class SysUser implements Serializable, UserDetails {
         return sb.toString();
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    /**
-     * 账户是否未过期,过期无法验证
-     */
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    /**
-     * 指定用户是否解锁,锁定的用户无法进行身份验证
-     *
-     * @return
-     */
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    /**
-     * 指示是否已过期的用户的凭据(密码),过期的凭据防止认证
-     * @return
-     */
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    /**
-     * 是否可用 ,禁用的用户不能身份验证
-     *
-     * @return
-     */
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 }

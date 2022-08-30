@@ -1,30 +1,60 @@
 package com.cdut.epidemicsyscontrolframework.filters;
 
-//@Component
-//public class JwtAuthenticationTokenFilter extends OncePerRequestFilter
-//{
-//
-//    @Autowired
-//    private SysUserService sysUserService;
-//
-//    @Autowired
-//    private RedisUtil redisUtil;
-//
-//    @Override
-//    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
-//            throws ServletException, IOException
-//    {
-//        String username = JWTUtil.getUsername(request.getHeader("token"));
-//        SysUser sysUser = (SysUser)redisUtil.get(username);
-//        JWTUtil.verify(request.getHeader("token"), sysUser.getUsername(), sysUser.getPassword());
-//
-//        if (StringUtils.isNotNull(loginUser) && StringUtils.isNull(SecurityUtils.getAuthentication()))
-//        {
-//            tokenService.verifyToken(loginUser);
-//            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginUser, null, loginUser.getAuthorities());
-//            authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-//            SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-//        }
-//        chain.doFilter(request, response);
-//    }
-//}
+import com.cdut.epidemicsyscontrolcommon.utils.JWTUtil;
+import com.cdut.epidemicsyscontrolcommon.utils.RedisCache;
+import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
+import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+@Component
+public class JwtAuthenticationTokenFilter extends OncePerRequestFilter
+{
+
+    @Autowired
+    private SysUserService sysUserService;
+
+    @Autowired
+    private RedisCache redisCache;
+
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
+        String token = httpServletRequest.getHeader("token");
+        // 如果不携带token
+        if(!StringUtils.hasText(token)){
+            //交由后续filter处理
+            filterChain.doFilter(httpServletRequest, httpServletResponse);
+            return;
+        }
+        String username = null;
+        try {
+            username = JWTUtil.getUsername(token);
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new RuntimeException("token非法");
+        }
+        LoginUser loginUser  = redisCache.getCacheObject(username);
+        if(Objects.isNull(loginUser))
+            throw new RuntimeException("用户未登录");
+        // TODO: 2022/8/30 赋予权限
+        // 封装用户信息存入context
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(loginUser, null, loginUser.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+        filterChain.doFilter(httpServletRequest, httpServletResponse);
+        // TODO: 2022/8/29 完成jwt过滤
+    }
+}

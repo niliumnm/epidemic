@@ -5,32 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b45bcd9-6f77-4fa1-807b-a9aa60eb7055" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/main/java/com/cdut/controller/KaptchaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/main/java/com/cdut/controller/SysLoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/main/java/com/cdut/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/RedisCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/config/KaptchaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/security/AuthenticationContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/security/SecurityUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/services/PermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/services/SysLoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/services/ValidationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/pojo/LoginUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/InRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/InRequestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/OutRequeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/OutRequeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/ReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/ReplyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/VisitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-admin/src/main/java/com/cdut/controller/VisitController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/InRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/InRequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/InRequestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/InRequestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/OutRequestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/OutRequestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/ReplyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/ReplyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/VistorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_back/epidemic-system/src/main/java/com/cdut/epidemicsystem/service/impl/VistorServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-admin/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/main/java/com/cdut/EpidemicSyscontrolAdminApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/main/java/com/cdut/EpidemicSyscontrolAdminApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/main/java/com/cdut/config/CorsConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/main/java/com/cdut/config/KaptchaConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/main/java/com/cdut/config/RedisConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/test/java/com/cdut/EpidemicSyscontrolAdminApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-admin/src/test/java/com/cdut/EpidemicSyscontrolAdminApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/JWTUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils/RedisUtil.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/filters/JwtAuthenticationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/filters/JwtAuthenticationTokenFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/services/SysUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/services/SysUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/services/ValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework/services/ValidationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/test/java/com/cdut/epidemicsyscontrolframework/EpidemicSyscontrolFrameworkApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-framework/src/test/java/com/cdut/epidemicsyscontrolframework/EpidemicSyscontrolFrameworkApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/mapper/SysUserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/mapper/SysUserRoleMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/pojo/SysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/pojo/SysUser.java" afterDir="false" />
@@ -97,7 +91,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/epidemic-syscontrol-common/src/main/java/com/cdut/epidemicsyscontrolcommon/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/epidemic-syscontrol-framework/src/main/java/com/cdut/epidemicsyscontrolframework" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -113,11 +107,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_syscontrol_back\epidemic-syscontrol-common\src\main\java\com\cdut\epidemicsyscontrolcommon\utils" />
       <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_syscontrol_back\epidemic-syscontrol-framework\src\main\java\com\cdut\epidemicsyscontrolframework" />
       <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_syscontrol_back\epidemic-syscontrol-admin\src\main\java\com\cdut" />
       <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_syscontrol_back\epidemic-syscontrol-system\src\main\resources\mapper" />
       <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_syscontrol_back\epidemic-syscontrol-system\src\main\java\com\cdut\epidemicsyscontrolsystem\service\impl" />
+      <recent name="D:\MyProjects\JavaProjects\epidemic\epidemic_syscontrol_back\epidemic-syscontrol-system\src\main\java\com\cdut\epidemicsyscontrolsystem\service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.cdut.epidemicsyscontrolsystem.properties" />
@@ -215,6 +209,7 @@
         <item itemvalue="HTTP Request.generated-requests | #7" />
         <item itemvalue="HTTP Request.generated-requests | #6" />
         <item itemvalue="JUnit.EpidemicSyscontrolFrameworkApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.EpidemicSyscontrolAdminApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -227,6 +222,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661744076860</updated>
       <workItem from="1661744078651" duration="39266000" />
+      <workItem from="1661744078651" duration="3172000" />
     </task>
     <servers />
   </component>
@@ -249,7 +245,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/epidemic-syscontrol-admin/src/test/java/com/cdut/EpidemicSyscontrolAdminApplicationTests.java</url>
-          <line>28</line>
+          <line>20</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

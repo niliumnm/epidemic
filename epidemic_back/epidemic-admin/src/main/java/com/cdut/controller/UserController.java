@@ -119,12 +119,22 @@ public class UserController {
     }
 
     @Operation(description = "ID查用户")
-    @RequestMapping(value = "//user/{id}", method = GET)
-    AjaxResult getUserById(@PathVariable("id") Integer id) {
+    @RequestMapping(value = "/user/getid", method = GET)
+    AjaxResult getUserById(@RequestParam("id") Integer id) {
         User userByID = userService.getUserByID(id);
         if (userByID == null) {
             return AjaxResult.error("该用户不存在");
         }
         return AjaxResult.success("获取成功", userByID);
+    }
+
+    @Operation(description = "ID查用户")
+    @RequestMapping(value = "/user/getname", method = GET)
+    AjaxResult getUserByName(@RequestParam("name") String name) {
+        User userByName = userService.getUserByName(name);
+        if (userByName == null) {
+            return AjaxResult.error("该用户不存在");
+        }
+        return AjaxResult.success("获取成功", userByName);
     }
 }

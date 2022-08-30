@@ -13,6 +13,5 @@ public class ValidationService {
         String username = usernamePasswordAuthenticationToken.getName();
         String password = usernamePasswordAuthenticationToken.getCredentials().toString();
 
-
     }
 }

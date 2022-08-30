@@ -6,10 +6,14 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.util.Date;
+
 import java.util.UUID;
 
 public class JWTUtil {
     private static final String SECRET = "as$aw&*@1ax#";
+
+
+
     //有效时间
     private static final long EXP = 6*60*60*1000;
 
@@ -19,6 +23,7 @@ public class JWTUtil {
     public static String sign(String username){
         Date date = new Date(System.currentTimeMillis()+EXP);//过期时间
         Algorithm algorithm = Algorithm.HMAC384(SECRET);
+
         //附带username
         return JWT.create()
                 .withClaim("username",username)
@@ -30,6 +35,7 @@ public class JWTUtil {
     //验证当前token是否有效
     public static boolean verify(String token,String username){
         Algorithm algorithm = Algorithm.HMAC384(SECRET);
+
         JWTVerifier verifier = JWT.require(algorithm)
                 .withClaim("username",username).build();
 

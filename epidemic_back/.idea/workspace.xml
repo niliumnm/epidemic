@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="435a1ef3-7056-4f24-9fab-a49e6096526a" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/main/java/com/cdut/controller/KaptchaController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-admin/src/main/java/com/cdut/controller/SysLoginController.java" afterDir="false" />
@@ -32,6 +33,9 @@
       <change beforePath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/service/impl/SysUserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/java/com/cdut/epidemicsyscontrolsystem/service/impl/SysUserRoleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/resources/mapper/SysUserRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../epidemic_syscontrol_back/epidemic-syscontrol-system/src/main/resources/mapper/SysUserRoleMapper.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="435a1ef3-7056-4f24-9fab-a49e6096526a" name="Changes" comment="" />
+>>>>>>> be2f5a2d6e146ae1a44cd1e11a24f0d2fa3f6e88
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

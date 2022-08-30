@@ -1,11 +1,14 @@
 package com.cdut.epidemicsystem.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdut.epidemicsystem.mapper.*;
 import com.cdut.epidemicsystem.pojo.*;
 import com.cdut.epidemicsystem.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author 47345
@@ -28,6 +31,9 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
     @Autowired(required = false)
     private VistorMapper vistorMapper;
 
+    @Autowired
+    private ReplyMapper replyMapper;
+
 
     public User getUserById(Integer userId) {
         return userDao.getUserByID(userId);
@@ -44,6 +50,19 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
 
     public Vistor getVisRequest(Integer requestId) {
         return vistorMapper.selectById(requestId);
+    }
+
+    public List<Reply> getPage(Integer pageNum, Integer pageSize, String name) {
+        pageNum = (pageNum - 1) * pageSize;
+        QueryWrapper<Reply> queryWrapper = new QueryWrapper<>();
+        if (!(name.equals(""))){
+            queryWrapper.like("name", name);
+
+        }
+
+        queryWrapper.last("limit "  + pageNum + ", " + pageSize);
+        List<Reply> replies = replyMapper.selectList(queryWrapper);
+        return replies;
     }
 }
 

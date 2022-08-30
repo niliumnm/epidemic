@@ -1,5 +1,6 @@
 package com.cdut.epidemicsystem.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.epidemicsystem.mapper.UserMapper;
@@ -9,6 +10,8 @@ import com.cdut.epidemicsystem.service.InRequestService;
 import com.cdut.epidemicsystem.mapper.InRequestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
 * @author 47345
@@ -34,6 +37,20 @@ public class InRequestServiceImpl extends ServiceImpl<InRequestMapper, InRequest
         inRequest.setHome(user.getHome());
 
         return AjaxResult.success("发送成功", inRequestDao.insert(inRequest));
+    }
+
+    @Override
+    public List<InRequest> getPage(Integer pageNum, Integer pageSize, String name) {
+        pageNum = (pageNum - 1) * pageSize;
+        QueryWrapper<InRequest> queryWrapper = new QueryWrapper<>();
+        if (!(name.equals(""))){
+            queryWrapper.like("name", name);
+
+        }
+
+        queryWrapper.last("limit "  + pageNum + ", " + pageSize);
+        List<InRequest> inRequests = inRequestDao.selectList(queryWrapper);
+        return inRequests;
     }
 }
 

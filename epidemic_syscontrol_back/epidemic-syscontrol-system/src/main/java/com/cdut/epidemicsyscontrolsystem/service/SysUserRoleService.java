@@ -3,6 +3,7 @@ package com.cdut.epidemicsyscontrolsystem.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole;
 
+
 import java.util.List;
 
 /**
@@ -11,5 +12,7 @@ import java.util.List;
 * @createDate 2022-08-29 11:01:38
 */
 public interface SysUserRoleService extends IService<SysUserRole> {
+
     List<String> getUserRoles(int id);
+
 }

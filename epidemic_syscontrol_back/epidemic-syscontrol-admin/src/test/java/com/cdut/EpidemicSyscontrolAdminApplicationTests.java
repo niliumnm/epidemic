@@ -4,20 +4,19 @@ import com.cdut.epidemicsyscontrolframework.security.SecurityUtil;
 import com.cdut.epidemicsyscontrolframework.services.SysLoginService;
 import com.cdut.epidemicsyscontrolframework.services.SysUserDetailsService;
 import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
+
 import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 
 @SpringBootTest
 class EpidemicSyscontrolAdminApplicationTests {
 
     @Autowired
     private SysUserService sysUserService;
-    @Autowired
-    private SysUserDetailsService detailsService;
+
 
     @Autowired
     SysLoginService sysLoginService;

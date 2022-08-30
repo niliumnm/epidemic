@@ -13,6 +13,7 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,6 +42,7 @@
             <artifactId>epidemic-syscontrol-system</artifactId>
             <version>${project.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.cdut</groupId>
             <artifactId>epidemic-syscontrol-framework</artifactId>

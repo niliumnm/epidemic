@@ -1,8 +1,11 @@
 package com.cdut.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
 import com.cdut.epidemic_common.utils.AjaxResult;
+import com.cdut.epidemic_common.utils.Page;
 import com.cdut.epidemicsystem.pojo.InRequest;
+import com.cdut.epidemicsystem.pojo.User;
 import com.cdut.epidemicsystem.service.InRequestService;
 import com.cdut.epidemicsystem.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -67,5 +70,17 @@ public class InRequestController {
     AjaxResult updateById(@RequestBody InRequest inRequest) {
         return AjaxResult.success("更新成功,如果记录不存在则被创建", inRequestService.saveOrUpdate(inRequest));
     }
+
+    @GetMapping("/in/page")
+    public AjaxResult findPage(@RequestParam Integer pageNum,
+                           @RequestParam Integer pageSize,
+                           @RequestParam(defaultValue = "") String name
+    ) {
+
+        List<InRequest> inRequests = inRequestService.getPage(pageNum, pageSize, name);
+        return AjaxResult.success(inRequests);
+    }
+
+
 
 }

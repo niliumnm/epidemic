@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -50,6 +52,7 @@ public class SysUser implements Serializable{
         this.id = id;
         this.username = username;
     }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {

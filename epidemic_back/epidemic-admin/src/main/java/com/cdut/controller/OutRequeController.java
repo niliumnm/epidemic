@@ -63,5 +63,15 @@ public class OutRequeController {
         return AjaxResult.success("更新成功,如果记录不存在则被创建", outRequestService.saveOrUpdate(outRequest));
     }
 
+    @GetMapping("/out/page")
+    public AjaxResult findPage(@RequestParam Integer pageNum,
+                               @RequestParam Integer pageSize,
+                               @RequestParam(defaultValue = "") String name
+    ) {
+
+        List<OutRequest> outRequests = outRequestService.getPage(pageNum, pageSize, name);
+        return AjaxResult.success(outRequests);
+    }
+
 
 }

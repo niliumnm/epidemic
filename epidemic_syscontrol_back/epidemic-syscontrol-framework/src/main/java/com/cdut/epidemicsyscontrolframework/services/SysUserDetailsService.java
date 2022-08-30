@@ -45,3 +45,4 @@ public class SysUserDetailsService implements UserDetailsService {
         return new LoginUser(user.getId(), roles, user);
     }
 }
+

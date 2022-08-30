@@ -7,9 +7,12 @@ import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -79,6 +82,16 @@ public class ReplyController {
     @RequestMapping(value = "/rep/all", method = GET)
     AjaxResult postRequest() {
         return AjaxResult.success("查询成功", replyService.list());
+    }
+
+    @GetMapping("/rep/page")
+    public AjaxResult findPage(@RequestParam Integer pageNum,
+                               @RequestParam Integer pageSize,
+                               @RequestParam(defaultValue = "") String name
+    ) {
+
+        List<Reply> replies = replyService.getPage(pageNum, pageSize, name);
+        return AjaxResult.success(replies);
     }
 
 }

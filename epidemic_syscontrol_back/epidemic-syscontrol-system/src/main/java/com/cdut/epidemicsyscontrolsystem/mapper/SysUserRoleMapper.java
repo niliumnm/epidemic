@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+
 /**
 * @author 47345
 * @description 针对表【t_sys_user_role】的数据库操作Mapper
@@ -15,7 +16,9 @@ import java.util.List;
 */
 @Mapper
 public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {
+
     List<String> getUserRoles(@Param("id") int id);
+
 }
 
 

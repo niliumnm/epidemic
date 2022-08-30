@@ -21,7 +21,12 @@ public class SysLoginController {
         String password = (String) req.get("password");
         String code = (String) req.get("code");
         String validateKey = (String) req.get("validateKey");
-        String token = loginService.login(username, password, code, validateKey);
+        String token = null;
+        try {
+            token = loginService.login(username, password, code, validateKey);
+        }catch (Exception e){
+            return AjaxResult.error("登录失败", e.getMessage());
+        }
         return AjaxResult.success("登录成功",token);
     }
 }

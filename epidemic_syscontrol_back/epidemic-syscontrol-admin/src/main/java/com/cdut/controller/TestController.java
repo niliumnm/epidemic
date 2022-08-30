@@ -14,6 +14,12 @@ public class TestController {
     @PreAuthorize("@ps.hasPermission('admin')")
     @GetMapping("/test")
     public AjaxResult test(){
-        return AjaxResult.success("测试成功", SecurityUtil.getUsername());
+        return AjaxResult.success("你有超级用户权限", SecurityUtil.getUsername());
+    }
+
+    @PreAuthorize("@ps.hasPermission('common')")
+    @GetMapping("/test1")
+    public AjaxResult test1(){
+        return AjaxResult.success("你有普通用户权限", SecurityUtil.getUsername());
     }
 }

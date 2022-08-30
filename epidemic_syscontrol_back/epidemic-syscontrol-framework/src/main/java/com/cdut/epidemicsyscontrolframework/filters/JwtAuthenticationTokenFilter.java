@@ -48,6 +48,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter
             throw new RuntimeException("token非法");
         }
         LoginUser loginUser  = redisCache.getCacheObject(username);
+        // 用户注销后 即使携带token 在redis中也查不出来 应该先判断是否在redis中
         if(Objects.isNull(loginUser))
             throw new RuntimeException("用户未登录");
         // TODO: 2022/8/30 赋予权限

@@ -1,5 +1,7 @@
 package com.cdut.epidemicsyscontrolcommon.utils;
 
+import org.springframework.http.HttpStatus;
+
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -179,6 +181,8 @@ public class AjaxResult extends HashMap<String, Object>
     {
         return new AjaxResult(Type.ERROR, msg, data);
     }
+
+
 
     /**
      * 是否为成功消息

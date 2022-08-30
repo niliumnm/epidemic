@@ -16,8 +16,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 @Component
@@ -48,6 +46,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter
             throw new RuntimeException("token非法");
         }
         LoginUser loginUser  = redisCache.getCacheObject(username);
+        // 用户注销后 即使携带token 在redis中也查不出来 应该先判断是否在redis中
         if(Objects.isNull(loginUser))
             throw new RuntimeException("用户未登录");
         // TODO: 2022/8/30 赋予权限

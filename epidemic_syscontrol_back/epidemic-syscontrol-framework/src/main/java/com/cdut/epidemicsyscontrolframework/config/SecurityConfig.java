@@ -2,6 +2,10 @@
 package com.cdut.epidemicsyscontrolframework.config;
 
 import com.cdut.epidemicsyscontrolframework.filters.JwtAuthenticationTokenFilter;
+
+import com.cdut.epidemicsyscontrolframework.handler.AccessDeniedExceptionHandler;
+import com.cdut.epidemicsyscontrolframework.handler.AuthenticationExceptionHandler;
+
 import com.cdut.epidemicsyscontrolframework.services.SysUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -40,6 +44,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
 
     /**
+     * 认证失败处理器
+     */
+    @Autowired
+    private AuthenticationExceptionHandler authenticationExceptionHandler;
+    /**
+     * 授权错误处理器
+     */
+    @Autowired
+    private AccessDeniedExceptionHandler accessDeniedExceptionHandler;
+
+    /**
      * 解决 无法直接注入 AuthenticationManager
      *
      * @return
@@ -71,7 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     protected void configure(HttpSecurity httpSecurity) throws Exception
     {
         httpSecurity
-                // CSRF禁用，因为不使用session
+                // CSRF禁用，前后端分离无需校验csrf token
                 .csrf().disable()
                  //基于token，所以不需要session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
@@ -85,6 +100,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 // 除上面外的所有请求全部需要鉴权认证
                 .anyRequest().authenticated();
         httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
+        httpSecurity
+                .exceptionHandling().authenticationEntryPoint(authenticationExceptionHandler)
+                .accessDeniedHandler(accessDeniedExceptionHandler);
+        // 注册跨域bean
+        httpSecurity.cors();
     }
 
     /**

@@ -1,17 +1,24 @@
 package com.cdut.epidemicsyscontrolframework.config;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class ResourcesConfig implements WebMvcConfigurer
 {
+    @Value("${file.location}")
+    private String location;
+    @Value("${file.path}")
+    private String path;
+
     /**
      * 跨域配置
      */
@@ -33,6 +40,12 @@ public class ResourcesConfig implements WebMvcConfigurer
         source.registerCorsConfiguration("/**", config);
         // 返回新的CorsFilter
         return new CorsFilter(source);
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler(path).addResourceLocations("file:///"+location);
+        WebMvcConfigurer.super.addResourceHandlers(registry);
     }
 
     @Override

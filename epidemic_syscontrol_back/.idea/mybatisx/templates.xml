@@ -67,14 +67,6 @@
                   <option name="className" value="SysUser" />
                   <option name="tableName" value="t_sys_user" />
                 </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="SysUserRole" />
-                  <option name="tableName" value="t_sys_user_role" />
-                </TableUIInfo>
-                <TableUIInfo>
-                  <option name="className" value="Role" />
-                  <option name="tableName" value="t_role" />
-                </TableUIInfo>
               </list>
             </option>
             <option name="templatesName" value="mybatis-plus3" />

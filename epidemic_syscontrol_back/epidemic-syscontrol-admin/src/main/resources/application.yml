@@ -22,10 +22,10 @@ spring:
     database: 0
     host: 175.178.92.208
     port: 6379
-    jedis:
-      pool:
-        max-active: 8
-        max-wait: 1
-        max-idle: 8
-        min-idle: 0
     timeout: 5000
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+

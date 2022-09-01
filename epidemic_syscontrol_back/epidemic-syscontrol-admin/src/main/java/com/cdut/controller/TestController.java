@@ -22,4 +22,5 @@ public class TestController {
     public AjaxResult test1(){
         return AjaxResult.success("你有普通用户权限", SecurityUtil.getUsername());
     }
+
 }

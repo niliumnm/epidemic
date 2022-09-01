@@ -9,13 +9,35 @@
             <result property="username" column="username" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="salt" column="salt" jdbcType="VARCHAR"/>
+            <result property="education" column="education" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="sign" column="sign" jdbcType="VARCHAR"/>
+            <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+            <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="school" column="school" jdbcType="VARCHAR"/>
+            <result property="idCardNum" column="id_card_num" jdbcType="VARCHAR"/>
+            <result property="gender" column="gender" jdbcType="BIT"/>
+            <result property="birthday" column="birthday" jdbcType="TIMESTAMP"/>
+            <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         id,username,password,
-        salt
+        salt,education,phone,
+        address,sign,real_name,
+        nick_name,email,school,
+        id_card_num,gender,birthday,
+        avatar_url
     </sql>
+    <update id="saveAvatarUrl">
+        update t_sys_user set avatar_url=#{avatar} where username=#{username};
+    </update>
     <select id="getSysUserByUsername" resultType="com.cdut.epidemicsyscontrolsystem.pojo.SysUser">
         select * from t_sys_user where username=#{username};
+    </select>
+    <select id="getAvatarByUsername" resultType="java.lang.String">
+        select avatar_url from t_sys_user where username=#{username};
     </select>
 </mapper>

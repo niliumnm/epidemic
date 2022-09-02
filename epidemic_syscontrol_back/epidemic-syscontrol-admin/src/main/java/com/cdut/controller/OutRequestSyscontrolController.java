@@ -21,7 +21,7 @@ public class OutRequestSyscontrolController {
     @RequestMapping(value = "/out/post", method = POST)
     AjaxResult postRequest(@RequestBody Map<String,Object> mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/out/post";
+        String url = "http://localhost:8080/out/post";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -30,7 +30,7 @@ public class OutRequestSyscontrolController {
     AjaxResult postRequest(@RequestParam Integer id) {
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/out/del";
+        String url = "http://localhost:8080/out/del";
         restTemplate.delete(url, id);
         return AjaxResult.success("删除成功",1);
     }
@@ -39,7 +39,7 @@ public class OutRequestSyscontrolController {
     @RequestMapping(value = "/out/all/{userid}", method = GET)
     AjaxResult getAllOutReqById(@PathVariable Integer userid) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/out/all/{userid}";
+        String url = "http://localhost:8080/out/all/{userid}";
         return restTemplate.getForObject(url, AjaxResult.class, userid);
     }
 
@@ -47,7 +47,7 @@ public class OutRequestSyscontrolController {
     @RequestMapping(value = "/out/all", method = GET)
     AjaxResult getAll() {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/out/all";
+        String url = "http://localhost:8080/out/all";
         return restTemplate.getForObject(url, AjaxResult.class);
     }
 
@@ -55,7 +55,7 @@ public class OutRequestSyscontrolController {
     @RequestMapping(value = "/out/update/", method = POST)
     AjaxResult updateById(@RequestBody Map<String,Object>mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/out/update";
+        String url = "http://localhost:8080/out/update";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -66,7 +66,7 @@ public class OutRequestSyscontrolController {
     ) {
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/out/page";
+        String url = "http://localhost:8080/out/page";
         Map mp = new HashMap<>();
         mp.put("pageNum", pageNum);
         mp.put("pageSize", pageSize);

@@ -22,7 +22,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/post", method = POST)
     AjaxResult postRequest(@RequestBody Map<String, Object> mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/in/post";
+        String url = "http://localhost:8080/in/post";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -30,7 +30,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/del", method = DELETE)
     AjaxResult delRequest(@RequestParam Integer id) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/in/del";
+        String url = "http://localhost:8080/in/del";
         restTemplate.delete(url, id);
         return AjaxResult.success("撤销成功",1);
     }
@@ -39,7 +39,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/all", method = GET)
     AjaxResult getAll() {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/in/all";
+        String url = "http://localhost:8080/in/all";
         return restTemplate.getForObject(url, AjaxResult.class);
     }
 
@@ -49,7 +49,7 @@ public class InRequestSyscontrolController {
         Map<String, Object> mp = new HashMap<>();
         mp.put("userid", userId);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/in/all/{userid}";
+        String url = "http://localhost:8080/in/all/{userid}";
         return restTemplate.getForObject(url, AjaxResult.class, mp);
     }
 
@@ -57,7 +57,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/update/", method = POST)
     AjaxResult updateById(@RequestBody Map<String, Object> mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/in/update";
+        String url = "http://localhost:8080/in/update";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -67,7 +67,7 @@ public class InRequestSyscontrolController {
                                @RequestParam(defaultValue = "") String name
     ) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/in/page";
+        String url = "http://localhost:8080/in/page";
         Map mp = new HashMap<>();
         mp.put("pageNum", pageNum);
         mp.put("pageSize", pageSize);

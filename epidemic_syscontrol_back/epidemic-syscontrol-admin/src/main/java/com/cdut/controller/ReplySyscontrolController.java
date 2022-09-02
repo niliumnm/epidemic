@@ -32,7 +32,7 @@ public class ReplySyscontrolController {
         mp.put("type", type);
         mp.put("requestId", requestId);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/rep/rep";
+        String url = "http://localhost:8080/rep/rep";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -40,7 +40,7 @@ public class ReplySyscontrolController {
     @RequestMapping(value = "/rep/all", method = GET)
     AjaxResult postRequest() {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/rep/all";
+        String url = "http://localhost:8080/rep/all";
         return restTemplate.getForObject(url, AjaxResult.class);
     }
 
@@ -51,7 +51,7 @@ public class ReplySyscontrolController {
     ) {
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http/localhost:8080/rep/page";
+        String url = "http://localhost:8080/rep/page";
         Map mp = new HashMap<>();
         mp.put("pageNum", pageNum);
         mp.put("pageSize", pageSize);

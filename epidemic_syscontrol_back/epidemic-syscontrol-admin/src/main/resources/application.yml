@@ -20,8 +20,8 @@ spring:
     include: framework,system
   redis:
     database: 0
-    host: 175.178.92.208
-#    host: 127.0.0.1
+#    host: 175.178.92.208
+    host: 127.0.0.1
     port: 6379
     timeout: 5000
   servlet:

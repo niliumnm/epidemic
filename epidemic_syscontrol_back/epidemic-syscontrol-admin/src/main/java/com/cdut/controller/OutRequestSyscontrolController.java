@@ -19,12 +19,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RestController
 @Tag(name = "OutRequestController", description = "出门请求")
 public class OutRequestSyscontrolController {
-    @Value("${server.port}")
-    private int port;
+//    @Value("${server.port}")
+    private int port = 8088;
     @Operation(description = "发送出门请求")
     @RequestMapping(value = "/out/post", method = POST)
     AjaxResult postRequest(@RequestBody Map<String,Object> mp) throws UnknownHostException {
-        String host = InetAddress.getLocalHost().getHostAddress();
+        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
         RestTemplate restTemplate = new RestTemplate();
         String url = host + port + "/out/post";
 //        String url = "http://localhost:8088/out/post";
@@ -34,7 +34,7 @@ public class OutRequestSyscontrolController {
     @Operation(description = "撤销出门请求")
     @RequestMapping(value = "/out/del", method = DELETE)
     AjaxResult postRequest(@RequestParam Integer id) throws UnknownHostException {
-        String host = InetAddress.getLocalHost().getHostAddress();
+        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
         RestTemplate restTemplate = new RestTemplate();
         String url = host + port + "/out/del?id={id}";
 //        String url = "http://localhost:8088/out/del?id={id}";
@@ -45,7 +45,7 @@ public class OutRequestSyscontrolController {
     @Operation(description = "根据ID查询所有出门请求")
     @RequestMapping(value = "/out/all/{userid}", method = GET)
     AjaxResult getAllOutReqById(@PathVariable("userid") Integer userid) throws UnknownHostException {
-        String host = InetAddress.getLocalHost().getHostAddress();
+        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
         RestTemplate restTemplate = new RestTemplate();
         String url = host + port + "/out/all/{userid}";
 //        String url = "http://localhost:8088/out/all/{userid}";
@@ -55,7 +55,7 @@ public class OutRequestSyscontrolController {
     @Operation(description = "领导查询所有出门请求")
     @RequestMapping(value = "/out/all", method = GET)
     AjaxResult getAll() throws UnknownHostException {
-        String host = InetAddress.getLocalHost().getHostAddress();
+        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
         RestTemplate restTemplate = new RestTemplate();
         String url = host + port + "/out/all";
 //        String url = "http://localhost:8088/out/all";
@@ -65,7 +65,7 @@ public class OutRequestSyscontrolController {
     @Operation(description = "根据ID更新出门请求")
     @RequestMapping(value = "/out/update/", method = POST)
     AjaxResult updateById(@RequestBody Map<String,Object>mp) throws UnknownHostException {
-        String host = InetAddress.getLocalHost().getHostAddress();
+        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
         RestTemplate restTemplate = new RestTemplate();
         String url = host + port + "/out/update/";
 //        String url = "http://localhost:8088/out/update/";
@@ -77,7 +77,7 @@ public class OutRequestSyscontrolController {
                                @RequestParam Integer pageSize,
                                @RequestParam(defaultValue = "") String name
     ) throws UnknownHostException {
-        String host = InetAddress.getLocalHost().getHostAddress();
+        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
         RestTemplate restTemplate = new RestTemplate();
         String url = host + port + "/out/page?pageNum={pageNum}&pageSize={pageSize}&name={name}";
 //        String url = "http://localhost:8088/out/page?pageNum={pageNum}&pageSize={pageSize}&name={name}";

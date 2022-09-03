@@ -1,12 +1,7 @@
 package com.cdut.epidemicsyscontrolsystem.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.cdut.epidemicsyscontrolcommon.utils.MD5Util;
-import com.cdut.epidemicsyscontrolsystem.mapper.SysUserRoleMapper;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
-import com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole;
-import com.cdut.epidemicsyscontrolsystem.pojo.dto.SysUserDto;
-import com.cdut.epidemicsyscontrolsystem.service.SysUserRoleService;
 import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
 import com.cdut.epidemicsyscontrolsystem.mapper.SysUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +16,8 @@ import org.springframework.stereotype.Service;
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
     implements SysUserService{
 
-    @Autowired(required = false)
+    @Autowired
     private SysUserMapper sysUserMapper;
-
-
-    @Autowired(required = false)
-    SysUserRoleMapper sysUserRoleMapper;
 
     @Override
     public int saveAvatarUrl(String username, String avatar) {
@@ -41,36 +32,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
     @Override
     public String getAvatarByUsername(String username) {
         return sysUserMapper.getAvatarByUsername(username);
-    }
-
-    @Override
-    public SysUserDto rigister(SysUser sysUser) {
-        SysUserDto sysUserDto = new SysUserDto( sysUser.getId(),
-                                                sysUser.getUsername(),
-                                                sysUser.getAddress(),
-                                                sysUser.getIdCardNum(),
-                                                sysUser.getPhone(),
-                                                sysUser.getRealName());
-        System.out.println(sysUser.toString());
-        sysUserMapper.insert(sysUser);
-        sysUser = sysUserMapper.getSysUserByUsername(sysUser.getUsername());
-        SysUserRole sysUserRole = new SysUserRole();
-        sysUserRole.setUserId(sysUser.getId());
-        sysUserRole.setRoleId(2);
-        sysUserRole.setUsername(sysUser.getUsername());
-        sysUserRole.setRoleName("common");
-        sysUserRoleMapper.insert(sysUserRole);
-        return sysUserDto;
-    }
-
-    @Override
-    public Integer update(SysUser sysUser) {
-        if (sysUser.getPassword() != null) {
-            String password  = sysUser.getPassword();
-            String salt = sysUser.getSalt();
-            sysUser.setPassword(MD5Util.formPassToDBPass(password, salt));
-        }
-        return sysUserMapper.update(sysUser);
     }
 }
 

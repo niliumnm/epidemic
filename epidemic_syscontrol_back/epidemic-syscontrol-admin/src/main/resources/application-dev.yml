@@ -1,4 +1,16 @@
 spring:
+  redis:
+    database: 0
+    host: 175.178.92.208
+    port: 6379
+    timeout: 5000
+    password: hoshino12@!
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
   datasource:
     druid:
       username: root
@@ -22,3 +34,9 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
+
+
+
+file:
+  location: D:/avatar
+  path: /avatar/**

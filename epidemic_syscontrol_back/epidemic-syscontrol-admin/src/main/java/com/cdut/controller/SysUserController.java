@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SysUserController {
 
-
     // TODO: 2022/9/1 更新管理员信息
     public AjaxResult updateInfo(){
         return null;
@@ -15,6 +14,11 @@ public class SysUserController {
 
     // TODO: 2022/9/1 更改管理员权限
     public AjaxResult updateRole(){
+        return null;
+    }
+
+    // TODO: 2022/9/1 更改管理员密码
+    public AjaxResult changePassword(){
         return null;
     }
 

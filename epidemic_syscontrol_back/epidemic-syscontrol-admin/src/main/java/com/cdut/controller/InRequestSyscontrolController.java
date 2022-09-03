@@ -1,7 +1,5 @@
 package com.cdut.controller;
 
-
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cdut.epidemicsyscontrolcommon.utils.AjaxResult;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -22,7 +20,8 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/post", method = POST)
     AjaxResult postRequest(@RequestBody Map<String, Object> mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/in/post";
+        String url = "http://localhost:8088/in/post";
+
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -30,7 +29,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/del", method = DELETE)
     AjaxResult delRequest(@RequestParam Integer id) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/in/del";
+        String url = "http://localhost:8088/in/del?id={id}";
         restTemplate.delete(url, id);
         return AjaxResult.success("撤销成功",1);
     }
@@ -39,25 +38,23 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/all", method = GET)
     AjaxResult getAll() {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/in/all";
+        String url = "http://localhost:8088/in/all";
         return restTemplate.getForObject(url, AjaxResult.class);
     }
 
     @Operation(description = "根据ID查询所有进门请求")
     @RequestMapping(value = "/in/all/{userid}", method = GET)
-    AjaxResult getAllById(@PathVariable("userid") Integer userId) {
-        Map<String, Object> mp = new HashMap<>();
-        mp.put("userid", userId);
+    AjaxResult getAllById(@PathVariable("userid") Integer userid) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/in/all/{userid}";
-        return restTemplate.getForObject(url, AjaxResult.class, mp);
+        String url = "http://localhost:8088/in/all/{userid}";
+        return restTemplate.getForObject(url, AjaxResult.class, userid);
     }
 
     @Operation(description = "根据ID更新进门请求")
     @RequestMapping(value = "/in/update/", method = POST)
     AjaxResult updateById(@RequestBody Map<String, Object> mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/in/update";
+        String url = "http://localhost:8088/in/update/";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -66,12 +63,14 @@ public class InRequestSyscontrolController {
                                @RequestParam Integer pageSize,
                                @RequestParam(defaultValue = "") String name
     ) {
+
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/in/page";
-        Map mp = new HashMap<>();
+        String url = "http://localhost:8088/in/page?pageNum={pageNum}&pageSize={pageSize}&name={name}";
+        Map<String,Object> mp = new HashMap<>();
         mp.put("pageNum", pageNum);
         mp.put("pageSize", pageSize);
         mp.put("name", name);
+        System.out.println(mp.size());
         return restTemplate.getForObject(url, AjaxResult.class, mp);
 
     }

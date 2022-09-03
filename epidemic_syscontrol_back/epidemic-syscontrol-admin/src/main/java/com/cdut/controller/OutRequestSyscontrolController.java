@@ -21,7 +21,7 @@ public class OutRequestSyscontrolController {
     @RequestMapping(value = "/out/post", method = POST)
     AjaxResult postRequest(@RequestBody Map<String,Object> mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/out/post";
+        String url = "http://localhost:8088/out/post";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -30,16 +30,16 @@ public class OutRequestSyscontrolController {
     AjaxResult postRequest(@RequestParam Integer id) {
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/out/del";
+        String url = "http://localhost:8088/out/del?id={id}";
         restTemplate.delete(url, id);
         return AjaxResult.success("删除成功",1);
     }
 
     @Operation(description = "根据ID查询所有出门请求")
     @RequestMapping(value = "/out/all/{userid}", method = GET)
-    AjaxResult getAllOutReqById(@PathVariable Integer userid) {
+    AjaxResult getAllOutReqById(@PathVariable("userid") Integer userid) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/out/all/{userid}";
+        String url = "http://localhost:8088/out/all/{userid}";
         return restTemplate.getForObject(url, AjaxResult.class, userid);
     }
 
@@ -47,7 +47,7 @@ public class OutRequestSyscontrolController {
     @RequestMapping(value = "/out/all", method = GET)
     AjaxResult getAll() {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/out/all";
+        String url = "http://localhost:8088/out/all";
         return restTemplate.getForObject(url, AjaxResult.class);
     }
 
@@ -55,19 +55,19 @@ public class OutRequestSyscontrolController {
     @RequestMapping(value = "/out/update/", method = POST)
     AjaxResult updateById(@RequestBody Map<String,Object>mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/out/update";
+        String url = "http://localhost:8088/out/update/";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
-    @GetMapping("/out/page")
+    @RequestMapping(value = "/out/page",method = GET)
     public AjaxResult findPage(@RequestParam Integer pageNum,
                                @RequestParam Integer pageSize,
                                @RequestParam(defaultValue = "") String name
     ) {
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/out/page";
-        Map mp = new HashMap<>();
+        String url = "http://localhost:8088/out/page?pageNum={pageNum}&pageSize={pageSize}&name={name}";
+        Map<String,Object> mp = new HashMap<>();
         mp.put("pageNum", pageNum);
         mp.put("pageSize", pageSize);
         mp.put("name", name);

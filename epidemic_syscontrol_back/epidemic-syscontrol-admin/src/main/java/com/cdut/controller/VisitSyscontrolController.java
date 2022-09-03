@@ -21,7 +21,7 @@ public class VisitSyscontrolController {
     @RequestMapping(value = "/vis/post", method = POST)
     AjaxResult postRequest(@RequestBody Map<String,Object> mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/vis/post";
+        String url = "http://localhost:8088/vis/post";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -29,7 +29,7 @@ public class VisitSyscontrolController {
     @RequestMapping(value = "/vis/all/{userid}", method = GET)
     AjaxResult getAllVisById(@PathVariable("userid") Integer userid) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/vis/all/{userid}";
+        String url = "http://localhost:8088/vis/all/{userid}";
         return restTemplate.getForObject(url, AjaxResult.class, userid);
     }
 
@@ -37,7 +37,7 @@ public class VisitSyscontrolController {
     @RequestMapping(value = "/vis/del", method = DELETE)
     AjaxResult delRequest(@RequestParam Integer id) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/vis/del";
+        String url = "http://localhost:8088/vis/del?id={id}";
         restTemplate.delete(url, id);
         return AjaxResult.success("撤销成功",1);
     }
@@ -46,7 +46,7 @@ public class VisitSyscontrolController {
     @RequestMapping(value = "/vis/all", method = GET)
     AjaxResult getAll() {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/vis/all";
+        String url = "http://localhost:8088/vis/all";
         return restTemplate.getForObject(url, AjaxResult.class);
     }
 
@@ -54,7 +54,7 @@ public class VisitSyscontrolController {
     @RequestMapping(value = "/vis/update/", method = POST)
     AjaxResult updateById(@RequestBody Map<String,Object> mp) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/vis/update";
+        String url = "http://localhost:8088/vis/update/";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
     }
 
@@ -64,8 +64,8 @@ public class VisitSyscontrolController {
                                @RequestParam(defaultValue = "") String name
     ) {
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/vis/page";
-        Map mp = new HashMap<>();
+        String url = "http://localhost:8088/vis/page?pageNum={pageNum}&pageSize={pageSize}&name={name}";
+        Map<String,Object> mp = new HashMap<>();
         mp.put("pageNum", pageNum);
         mp.put("pageSize", pageSize);
         mp.put("name", name);

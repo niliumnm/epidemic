@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RestController;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
@@ -47,5 +48,6 @@ public class SysRegistryController {
         System.out.println(sysUser.toString());
 
         return AjaxResult.success("注册成功", sysUserService.rigister(sysUser));
+
     }
 }

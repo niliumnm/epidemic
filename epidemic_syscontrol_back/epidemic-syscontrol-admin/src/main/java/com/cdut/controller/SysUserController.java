@@ -18,10 +18,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RestController
 public class SysUserController {
 
-
     @Autowired
     SysUserService sysUserService;
-
 
     @Autowired
     SysUserRoleService sysUserRoleService;
@@ -41,6 +39,11 @@ public class SysUserController {
         SysUser sysUser = sysUserService.getSysUserByUsername(username);
         if (sysUser.getId() <= 0) return AjaxResult.error("不存在此用户",-1);
         return AjaxResult.success("更新成功", sysUserRoleService.update(sysUser, roleId));
+    }
+
+    // TODO: 2022/9/1 更改管理员密码
+    public AjaxResult changePassword(){
+        return null;
     }
 
 }

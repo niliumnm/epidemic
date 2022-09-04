@@ -7,8 +7,6 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.util.Date;
 
-import java.util.UUID;
-
 public class JWTUtil {
     private static final String SECRET = "as$aw&*@1ax#";
 

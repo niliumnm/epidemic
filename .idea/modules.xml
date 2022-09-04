@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/boot.iml" filepath="$PROJECT_DIR$/.idea/boot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic-admin/epidemic-admin.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic-admin/epidemic-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic-common/epidemic-common.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic-common/epidemic-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic-framework/epidemic-framework.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic-framework/epidemic-framework.iml" />
@@ -12,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/epidemic_syscontrol_back/epidemic-syscontrol-framework/epidemic-syscontrol-framework.iml" filepath="$PROJECT_DIR$/epidemic_syscontrol_back/epidemic-syscontrol-framework/epidemic-syscontrol-framework.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_syscontrol_back/epidemic-syscontrol-system/epidemic-syscontrol-system.iml" filepath="$PROJECT_DIR$/epidemic_syscontrol_back/epidemic-syscontrol-system/epidemic-syscontrol-system.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic-system/epidemic-system.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic-system/epidemic-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic_back.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic_back.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_syscontrol_back/epidemic_syscontrol_back.iml" filepath="$PROJECT_DIR$/epidemic_syscontrol_back/epidemic_syscontrol_back.iml" />
     </modules>
   </component>

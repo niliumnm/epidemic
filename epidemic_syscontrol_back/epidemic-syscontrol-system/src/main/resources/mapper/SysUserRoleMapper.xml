@@ -15,21 +15,7 @@
         user_id,role_id,username,
         role_name
     </sql>
-    <insert id="insert">
-        insert into t_sys_user_role (user_id, role_id, username, role_name) VALUE (#{sysUserRole.userId}, #{sysUserRole.roleId}, #{sysUserRole.username}, #{sysUserRole.roleName})
-    </insert>
-    <update id="update">
-        update t_sys_user_role
-        <set>
 
-            <if test="sysUserRole.roleName != null" >
-                role_name = #{sysUserRole.roleName},
-            </if>
-        </set>
-        <where>
-             user_id = #{sysUserRole.userId}
-        </where>
-    </update>
     <select id="getUserRoles" resultType="java.lang.String">
         select role_name from t_sys_user_role where user_id=#{id}
     </select>

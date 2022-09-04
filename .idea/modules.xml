@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/epidemic.iml" filepath="$PROJECT_DIR$/epidemic.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic-admin/epidemic-admin.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic-admin/epidemic-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic-common/epidemic-common.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic-common/epidemic-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/epidemic_back/epidemic-framework/epidemic-framework.iml" filepath="$PROJECT_DIR$/epidemic_back/epidemic-framework/epidemic-framework.iml" />

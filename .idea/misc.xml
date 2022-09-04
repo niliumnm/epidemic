@@ -3,19 +3,13 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/epidemic_back/epidemic-admin/pom.xml" />
-        <option value="$PROJECT_DIR$/epidemic_back/epidemic-common/pom.xml" />
-        <option value="$PROJECT_DIR$/epidemic_back/epidemic-framework/pom.xml" />
-        <option value="$PROJECT_DIR$/epidemic_back/epidemic-system/pom.xml" />
         <option value="$PROJECT_DIR$/epidemic_back/pom.xml" />
-        <option value="$PROJECT_DIR$/epidemic_syscontrol_back/epidemic-syscontrol-admin/pom.xml" />
         <option value="$PROJECT_DIR$/epidemic_syscontrol_back/pom.xml" />
-        <option value="$PROJECT_DIR$/epidemic_syscontrol_back/epidemic-syscontrol-framework/pom.xml" />
-        <option value="$PROJECT_DIR$/epidemic_syscontrol_back/epidemic-syscontrol-system/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="temurin-18" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

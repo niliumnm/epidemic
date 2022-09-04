@@ -6,9 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
-
 import lombok.Data;
-import net.minidev.json.annotate.JsonIgnore;
 
 /**
  * 
@@ -20,7 +18,7 @@ public class SysUser implements Serializable {
     /**
      * 
      */
-    @TableId(type = IdType.AUTO)
+    @TableId
     private Integer id;
 
     /**
@@ -31,7 +29,6 @@ public class SysUser implements Serializable {
     /**
      * 
      */
-    @JsonIgnore
     private String password;
 
     /**

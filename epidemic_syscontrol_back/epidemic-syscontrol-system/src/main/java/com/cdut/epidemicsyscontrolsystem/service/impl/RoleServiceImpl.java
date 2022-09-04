@@ -3,9 +3,7 @@ package com.cdut.epidemicsyscontrolsystem.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdut.epidemicsyscontrolsystem.mapper.RoleMapper;
 import com.cdut.epidemicsyscontrolsystem.pojo.Role;
-import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
 import com.cdut.epidemicsyscontrolsystem.service.RoleService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**

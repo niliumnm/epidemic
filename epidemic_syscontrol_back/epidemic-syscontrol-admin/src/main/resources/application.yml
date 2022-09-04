@@ -1,16 +1,6 @@
 spring:
   profiles:
-    include: framework,system
-  redis:
-    database: 0
-#    host: 175.178.92.208
-    host: 127.0.0.1
-    port: 6379
-    timeout: 5000
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 100MB
+    active: dev
 
 
 

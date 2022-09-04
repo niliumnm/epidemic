@@ -22,12 +22,15 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @Tag(name = "InRequestController", description = "进门请求")
 public class InRequestSyscontrolController {
 
-//    @Value("${server.port}")
-    private int port = 8088;
+    @Value("${front.port}")
+    private int port;
+    @Value("${front.host}")
+    private String host;
+
     @Operation(description = "发送进门请求")
     @RequestMapping(value = "/in/post", method = POST)
     AjaxResult postRequest(@RequestBody Map<String, Object> mp) throws UnknownHostException {
-        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
+        String host = "http://"+ this.host + ":";
         RestTemplate restTemplate = new RestTemplate();
         String url = host + port + "/in/post";
 //        String url = "http://localhost:8088/in/post";
@@ -39,7 +42,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/del", method = DELETE)
     AjaxResult delRequest(@RequestParam Integer id) throws UnknownHostException {
         RestTemplate restTemplate = new RestTemplate();
-        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
+        String host = "http://"+ this.host + ":";
         String url = host + port + "/in/del?id={id}";
 //        String url = "http://localhost:8088/in/del?id={id}";
         restTemplate.delete(url, id);
@@ -50,7 +53,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/all", method = GET)
     AjaxResult getAll() throws UnknownHostException {
         RestTemplate restTemplate = new RestTemplate();
-        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
+        String host = "http://"+ this.host + ":";
         String url = host + port + "/in/all";
 //        String url = "http://localhost:8088/in/all";
         return restTemplate.getForObject(url, AjaxResult.class);
@@ -60,7 +63,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/all/{userid}", method = GET)
     AjaxResult getAllById(@PathVariable("userid") Integer userid) throws UnknownHostException {
         RestTemplate restTemplate = new RestTemplate();
-        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
+        String host = "http://"+ this.host + ":";
         String url = host + port + "/in/all/{userid}";
 //        String url = "http://localhost:8088/in/all/{userid}";
         return restTemplate.getForObject(url, AjaxResult.class, userid);
@@ -70,7 +73,7 @@ public class InRequestSyscontrolController {
     @RequestMapping(value = "/in/update/", method = POST)
     AjaxResult updateById(@RequestBody Map<String, Object> mp) throws UnknownHostException {
         RestTemplate restTemplate = new RestTemplate();
-        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
+        String host = "http://"+ this.host + ":";
         String url = host + port + "/in/update/";
 //        String url = "http://localhost:8088/in/update/";
         return restTemplate.postForObject(url, mp, AjaxResult.class);
@@ -83,7 +86,7 @@ public class InRequestSyscontrolController {
     ) throws UnknownHostException {
 
         RestTemplate restTemplate = new RestTemplate();
-        String host = "http://"+ InetAddress.getLocalHost().getHostAddress() + ":";
+        String host = "http://"+ this.host + ":";
         String url = host + port + "/in/page?pageNum={pageNum}&pageSize={pageSize}&name={name}";
 //        String url = "http://localhost:8088/in/page?pageNum={pageNum}&pageSize={pageSize}&name={name}";
         Map<String,Object> mp = new HashMap<>();

@@ -37,3 +37,7 @@ spring:
 file:
   location: /opt/avatar
   path: /avatar/**
+
+front:
+  host: user_system
+  port: 8088

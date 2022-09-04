@@ -3,7 +3,6 @@ package com.cdut.epidemicsyscontrolsystem.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cdut.epidemicsyscontrolsystem.pojo.Role;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 /**
 * @author 47345

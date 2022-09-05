@@ -19,6 +19,10 @@ public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {
 
     List<String> getUserRoles(@Param("id") int id);
 
+    Integer update(@Param("sysUserRole") SysUserRole sysUserRole);
+
+    int insert(@Param("sysUserRole") SysUserRole sysUserRole);
+
 }
 
 

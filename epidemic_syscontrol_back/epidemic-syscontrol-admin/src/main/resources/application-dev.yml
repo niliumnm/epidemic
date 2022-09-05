@@ -1,3 +1,5 @@
+
+
 spring:
   redis:
     database: 0
@@ -43,3 +45,5 @@ file:
 front:
   host: localhost
   port: 8088
+server:
+  port: 11451

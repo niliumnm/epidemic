@@ -5,8 +5,8 @@
 <mapper namespace="com.cdut.epidemicsyscontrolsystem.mapper.RoleMapper">
 
     <resultMap id="BaseResultMap" type="com.cdut.epidemicsyscontrolsystem.pojo.Role">
-            <id property="roleId" column="role_id" jdbcType="INTEGER"/>
-            <result property="roleName" column="role_name" jdbcType="VARCHAR"/>
+        <id property="roleId" column="role_id" jdbcType="INTEGER"/>
+        <result property="roleName" column="role_name" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">

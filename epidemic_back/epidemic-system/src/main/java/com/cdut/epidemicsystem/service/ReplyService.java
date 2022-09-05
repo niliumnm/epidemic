@@ -2,6 +2,10 @@ package com.cdut.epidemicsystem.service;
 
 import com.cdut.epidemicsystem.pojo.Reply;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Date;
+import java.util.List;
 
 /**
 * @author 47345

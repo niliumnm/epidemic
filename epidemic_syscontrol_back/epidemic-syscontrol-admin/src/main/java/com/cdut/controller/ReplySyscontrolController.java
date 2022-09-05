@@ -1,9 +1,11 @@
 package com.cdut.controller;
 
 import com.cdut.epidemicsyscontrolcommon.utils.AjaxResult;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -75,5 +78,21 @@ public class ReplySyscontrolController {
         return restTemplate.getForObject(url, AjaxResult.class, mp);
     }
 
+    @GetMapping("/rep/time")
+    public AjaxResult findByTime(
+            @RequestParam Integer pageNum,
+            @RequestParam Integer pageSize,
+            @RequestParam String begin,
+            @RequestParam String end){
+        RestTemplate restTemplate = new RestTemplate();
+        String host = "http://"+ this.host + ":";
+        String url = host + port + "/rep/time?pageNum={pageNum}&pageSize={pageSize}&begin={begin}&end={end}";
+        Map<String,Object> mp = new HashMap<>();
+        mp.put("pageNum", pageNum);
+        mp.put("pageSize", pageSize);
+        mp.put("begin", begin);
+        mp.put("end", end);
+        return restTemplate.getForObject(url, AjaxResult.class, mp);
+    }
 
 }

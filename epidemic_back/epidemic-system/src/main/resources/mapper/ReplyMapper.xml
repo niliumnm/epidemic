@@ -24,4 +24,9 @@
         health_statue,mask,summary,
         passed,temprature
     </sql>
+    <select id="findByTime" resultType="com.cdut.epidemicsystem.pojo.Reply">
+        select * from t_reply where time between #{startTime} and #{endTime};
+    </select>
+
+
 </mapper>

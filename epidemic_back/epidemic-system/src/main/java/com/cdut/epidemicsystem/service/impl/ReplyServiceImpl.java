@@ -8,6 +8,7 @@ import com.cdut.epidemicsystem.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -65,7 +66,7 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         return replies;
     }
 
-    public List<Reply> getTime(Integer pageNum, Integer pageSize, String begin, String end) {
+    public List<Reply> getTime(Integer pageNum, Integer pageSize, Date begin, Date end) {
         pageNum = (pageNum - 1) * pageSize;
         QueryWrapper<Reply> queryWrapper = new QueryWrapper<>();
         queryWrapper.between("time", begin, end);

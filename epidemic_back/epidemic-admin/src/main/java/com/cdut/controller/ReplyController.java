@@ -7,11 +7,13 @@ import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -97,8 +99,8 @@ public class ReplyController {
     @GetMapping("/rep/time")
     public AjaxResult findTime(@RequestParam Integer pageNum,
                                @RequestParam Integer pageSize,
-                               @RequestParam String begin,
-                               @RequestParam String end ){
+                               @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date begin,
+                               @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date end ){
 
         if(begin.compareTo(end)>=0){
             return AjaxResult.error("参数错误:起始日期大于截止日期!");

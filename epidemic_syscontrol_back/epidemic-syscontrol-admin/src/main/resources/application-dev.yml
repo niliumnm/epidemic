@@ -37,7 +37,6 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 
 
-
 file:
   location: D:/avatar
   path: /avatar/**

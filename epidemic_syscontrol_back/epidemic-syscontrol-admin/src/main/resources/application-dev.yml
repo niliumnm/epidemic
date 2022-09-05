@@ -27,7 +27,6 @@ spring:
       testOnBorrow: false
       testOnReturn: false
       poolPreparedStatements: true
-      #   ?????????filters????????sql?????'wall'?????
       filters: stat,wall
       maxPoolPreparedStatementPerConnectionSize: 20
       useGlobalDataSourceStat: true

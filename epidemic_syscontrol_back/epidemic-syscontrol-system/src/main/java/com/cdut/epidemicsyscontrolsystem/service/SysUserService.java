@@ -2,7 +2,6 @@ package com.cdut.epidemicsyscontrolsystem.service;
 
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.cdut.epidemicsyscontrolsystem.pojo.dto.SysUserDto;
 import org.apache.ibatis.annotations.Param;
 
 /**
@@ -16,8 +15,4 @@ public interface SysUserService extends IService<SysUser> {
     SysUser getSysUserByUsername(String username);
 
     String getAvatarByUsername(@Param("username")String username);
-
-    SysUserDto rigister(SysUser sysUser);
-
-    Integer update(SysUser sysUser);
 }

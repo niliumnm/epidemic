@@ -66,10 +66,14 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         return replies;
     }
 
-    @Override
-    public List<Reply> findByTime(Date startTime, Date endTime) {
-        return replyMapper.findByTime(startTime, endTime);
+    public List<Reply> getTime(Integer pageNum, Integer pageSize, Date begin, Date end) {
+        pageNum = (pageNum - 1) * pageSize;
+        QueryWrapper<Reply> queryWrapper = new QueryWrapper<>();
+        queryWrapper.between("time", begin, end);
+        queryWrapper.last("limit " + pageNum + ", " + pageSize);
+        return replyMapper.selectList(queryWrapper);
     }
+
 }
 
 

@@ -4,7 +4,6 @@ import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.epidemicsystem.pojo.*;
 import com.cdut.epidemicsystem.service.impl.ReplyServiceImpl;
 import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -98,11 +96,17 @@ public class ReplyController {
         return AjaxResult.success(replies);
     }
 
-    @GetMapping("rep/time")
-    public AjaxResult findByTime(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")Date startTime,
-                                 @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")Date endTime){
-        System.out.println(startTime);
-        System.out.println(endTime);
-        return AjaxResult.success("查询成功",replyService.findByTime(startTime, endTime));
+    @GetMapping("/rep/time")
+    public AjaxResult findTime(@RequestParam Integer pageNum,
+                               @RequestParam Integer pageSize,
+                               @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date begin,
+                               @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date end ){
+
+        if(begin.compareTo(end)>=0){
+            return AjaxResult.error("参数错误:起始日期大于截止日期!");
+        }
+        List<Reply> visRequests = replyService.getTime(pageNum, pageSize,begin,end);
+        return AjaxResult.success(visRequests);
     }
+
 }

@@ -79,14 +79,19 @@ public class ReplySyscontrolController {
     }
 
     @GetMapping("/rep/time")
-    public AjaxResult findByTime(@RequestParam String startTime,
-                                 @RequestParam String endTime){
+    public AjaxResult findByTime(
+            @RequestParam Integer pageNum,
+            @RequestParam Integer pageSize,
+            @RequestParam String begin,
+            @RequestParam String end){
         RestTemplate restTemplate = new RestTemplate();
         String host = "http://"+ this.host + ":";
-        String url = host + port + "/rep/time?startTime={startTime}&endTime={endTime}";
+        String url = host + port + "/rep/time?pageNum={pageNum}&pageSize={pageSize}&begin={begin}&end={end}";
         Map<String,Object> mp = new HashMap<>();
-        mp.put("startTime", startTime);
-        mp.put("endTime", endTime);
+        mp.put("pageNum", pageNum);
+        mp.put("pageSize", pageSize);
+        mp.put("begin", begin);
+        mp.put("end", end);
         return restTemplate.getForObject(url, AjaxResult.class, mp);
     }
 

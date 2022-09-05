@@ -64,6 +64,15 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         List<Reply> replies = replyMapper.selectList(queryWrapper);
         return replies;
     }
+
+    public List<Reply> getTime(Integer pageNum, Integer pageSize, String begin, String end) {
+        pageNum = (pageNum - 1) * pageSize;
+        QueryWrapper<Reply> queryWrapper = new QueryWrapper<>();
+        queryWrapper.between("time", begin, end);
+        queryWrapper.last("limit " + pageNum + ", " + pageSize);
+        return replyMapper.selectList(queryWrapper);
+    }
+
 }
 
 

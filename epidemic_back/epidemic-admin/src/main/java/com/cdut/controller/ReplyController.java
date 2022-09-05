@@ -94,4 +94,17 @@ public class ReplyController {
         return AjaxResult.success(replies);
     }
 
+    @GetMapping("/rep/time")
+    public AjaxResult findTime(@RequestParam Integer pageNum,
+                               @RequestParam Integer pageSize,
+                               @RequestParam String begin,
+                               @RequestParam String end ){
+
+        if(begin.compareTo(end)>=0){
+            return AjaxResult.error("参数错误:起始日期大于截止日期!");
+        }
+        List<Reply> visRequests = replyService.getTime(pageNum, pageSize,begin,end);
+        return AjaxResult.success(visRequests);
+    }
+
 }

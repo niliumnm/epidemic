@@ -39,5 +39,5 @@ file:
   path: /avatar/**
 
 front:
-  host: user_system
+  host: my_user_system
   port: 8088

@@ -1,6 +1,7 @@
 package com.cdut.epidemicsyscontrolsystem.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole;
 
 
@@ -14,5 +15,7 @@ import java.util.List;
 public interface SysUserRoleService extends IService<SysUserRole> {
 
     List<String> getUserRoles(int id);
+
+    Integer update(SysUser sysUser, Integer roleId);
 
 }

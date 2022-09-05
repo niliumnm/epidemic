@@ -18,6 +18,10 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
     SysUser getSysUserByUsername(@Param("username") String username);
 
     String getAvatarByUsername(@Param("username")String username);
+
+    Integer update(@Param("sysUser")SysUser sysUser);
+
+    int insert(@Param("sysUser") SysUser sysUser);
 }
 
 

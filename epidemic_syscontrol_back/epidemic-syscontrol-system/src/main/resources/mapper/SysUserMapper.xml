@@ -5,22 +5,22 @@
 <mapper namespace="com.cdut.epidemicsyscontrolsystem.mapper.SysUserMapper">
 
     <resultMap id="BaseResultMap" type="com.cdut.epidemicsyscontrolsystem.pojo.SysUser">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
-            <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="salt" column="salt" jdbcType="VARCHAR"/>
-            <result property="education" column="education" jdbcType="VARCHAR"/>
-            <result property="phone" column="phone" jdbcType="VARCHAR"/>
-            <result property="address" column="address" jdbcType="VARCHAR"/>
-            <result property="sign" column="sign" jdbcType="VARCHAR"/>
-            <result property="realName" column="real_name" jdbcType="VARCHAR"/>
-            <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
-            <result property="email" column="email" jdbcType="VARCHAR"/>
-            <result property="school" column="school" jdbcType="VARCHAR"/>
-            <result property="idCardNum" column="id_card_num" jdbcType="VARCHAR"/>
-            <result property="gender" column="gender" jdbcType="BIT"/>
-            <result property="birthday" column="birthday" jdbcType="TIMESTAMP"/>
-            <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="salt" column="salt" jdbcType="VARCHAR"/>
+        <result property="education" column="education" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="sign" column="sign" jdbcType="VARCHAR"/>
+        <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+        <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="school" column="school" jdbcType="VARCHAR"/>
+        <result property="idCardNum" column="id_card_num" jdbcType="VARCHAR"/>
+        <result property="gender" column="gender" jdbcType="BIT"/>
+        <result property="birthday" column="birthday" jdbcType="TIMESTAMP"/>
+        <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -34,10 +34,70 @@
     <update id="saveAvatarUrl">
         update t_sys_user set avatar_url=#{avatar} where username=#{username};
     </update>
+
     <select id="getSysUserByUsername" resultType="com.cdut.epidemicsyscontrolsystem.pojo.SysUser">
         select * from t_sys_user where username=#{username};
     </select>
     <select id="getAvatarByUsername" resultType="java.lang.String">
         select avatar_url from t_sys_user where username=#{username};
     </select>
+
+
+    <insert id="insert">
+        insert into t_sys_user (username, password, salt) value (#{sysUser.username}, #{sysUser.password}, #{sysUser.salt})
+    </insert>
+
+
+
+
+    <!--    Integer update(@Param("sysuser")SysUser sysUser);-->
+
+    <update id="update">
+        update t_sys_user
+        <set>
+            <if test="sysUser.username != null">
+                username = #{sysUser.username},
+            </if>
+            <if test="sysUser.education != null">
+                education = #{sysUser.education},
+            </if>
+            <if test="sysUser.phone != null">
+                phone = #{sysUser.phone},
+            </if>
+            <if test="sysUser.address != null">
+                address = #{sysUser.address},
+            </if>
+            <if test="sysUser.sign != null">
+                sign = #{sysUser.sign},
+            </if>
+            <if test="sysUser.realName != null">
+                real_name = #{sysUser.realName},
+            </if>
+            <if test="sysUser.nickName != null">
+                nick_name = #{sysUser.nickName},
+            </if>
+            <if test="sysUser.email != null">
+                email = #{sysUser.email},
+            </if>
+            <if test="sysUser.school != null">
+                school = #{sysUser.school},
+            </if>
+            <if test="sysUser.idCardNum != null">
+                id_card_num = #{sysUser.idCardNum},
+            </if>
+            <if test="sysUser.gender != null">
+                gender = #{sysUser.gender},
+            </if>
+            <if test="sysUser.birthday != null">
+                birthday = #{sysUser.birthday},
+            </if>
+            <if test="sysUser.avatarUrl != null">
+                avatar_url = #{sysUser.avatarUrl}
+            </if>
+        </set>
+        <where>
+            id = #{sysUser.id}
+        </where>
+    </update>
+
 </mapper>

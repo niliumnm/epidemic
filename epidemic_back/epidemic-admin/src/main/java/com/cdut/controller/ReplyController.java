@@ -4,14 +4,18 @@ import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.epidemicsystem.pojo.*;
 import com.cdut.epidemicsystem.service.impl.ReplyServiceImpl;
 import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -94,4 +98,11 @@ public class ReplyController {
         return AjaxResult.success(replies);
     }
 
+    @GetMapping("rep/time")
+    public AjaxResult findByTime(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")Date startTime,
+                                 @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")Date endTime){
+        System.out.println(startTime);
+        System.out.println(endTime);
+        return AjaxResult.success("查询成功",replyService.findByTime(startTime, endTime));
+    }
 }

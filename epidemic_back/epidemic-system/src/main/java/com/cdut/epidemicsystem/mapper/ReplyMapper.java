@@ -3,6 +3,10 @@ package com.cdut.epidemicsystem.mapper;
 import com.cdut.epidemicsystem.pojo.Reply;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Date;
+import java.util.List;
 
 /**
 * @author 47345
@@ -12,7 +16,7 @@ import org.apache.ibatis.annotations.Mapper;
 */
 @Mapper
 public interface ReplyMapper extends BaseMapper<Reply> {
-
+    public List<Reply> findByTime(@Param("startTime") Date startTime, @Param("endTime") Date endTime);
 }
 
 

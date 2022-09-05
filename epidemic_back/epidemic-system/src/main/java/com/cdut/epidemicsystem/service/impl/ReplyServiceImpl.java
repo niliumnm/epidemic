@@ -8,6 +8,7 @@ import com.cdut.epidemicsystem.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -63,6 +64,11 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         queryWrapper.last("limit "  + pageNum + ", " + pageSize);
         List<Reply> replies = replyMapper.selectList(queryWrapper);
         return replies;
+    }
+
+    @Override
+    public List<Reply> findByTime(Date startTime, Date endTime) {
+        return replyMapper.findByTime(startTime, endTime);
     }
 }
 

@@ -13,6 +13,8 @@ mybatis:
   mapper-locations: classpath*:mapper/*.xml
   type-aliases-package: com.cdut.pojo
 spring:
+  application:
+    name: my_user_system
   redis:
     database: 0
     host: myredis

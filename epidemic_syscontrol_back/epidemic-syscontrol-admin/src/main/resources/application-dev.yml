@@ -35,7 +35,8 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-
+  application:
+    name: my_sys_control
 
 file:
   location: D:/avatar

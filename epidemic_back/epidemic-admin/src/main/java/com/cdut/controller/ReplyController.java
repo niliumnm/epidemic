@@ -6,6 +6,8 @@ import com.cdut.epidemicsystem.service.impl.ReplyServiceImpl;
 import com.cdut.epidemicsystem.service.impl.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RestController
 @Tag(name = "InRequestController", description = "回复请求")
 public class ReplyController {
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     ReplyServiceImpl replyService;
     @Autowired
@@ -83,6 +87,7 @@ public class ReplyController {
     @Operation(description = "查看全部回复")
     @RequestMapping(value = "/rep/all", method = GET)
     AjaxResult postRequest() {
+        log.info("进入user_system，postRequest方法");
         return AjaxResult.success("查询成功", replyService.list());
     }
 

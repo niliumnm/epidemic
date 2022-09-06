@@ -1,6 +1,5 @@
-## 一、准备工作
-git clone下来后，将epidemic_back与epidemic_syscontrol_back进行maven打包。
+## 一、主动运行
+git clone下来后，直接运行epidemic_back与epidemic_syscontrol_back，系统功能就全部开启了。
 ## 二、部署
-将两个模块的jar包与docker-compose.yml、 Dockerfile-sysControl、Dockerfile-userSystem放到同一目录下
-使用docker-compose进行环境容器化部署
+进入docker-deploy中执行：
 > docker-compose up --build -d

@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: my_sys_control
   redis:
     database: 0
     host: myredis
@@ -39,5 +41,7 @@ file:
   path: /avatar/**
 
 front:
-  host: my_user_system
+  host: myusersystem
   port: 8088
+server:
+  port: 11451

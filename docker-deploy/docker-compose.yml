@@ -41,7 +41,6 @@ services:
     image: "myredis"
     container_name: myredis
     networks:
-
       - back_network
     ports:
       - "6379:6379"

@@ -38,6 +38,7 @@ spring:
   application:
     name: my_sys_control
 
+
 file:
   location: D:/avatar
   path: /avatar/**

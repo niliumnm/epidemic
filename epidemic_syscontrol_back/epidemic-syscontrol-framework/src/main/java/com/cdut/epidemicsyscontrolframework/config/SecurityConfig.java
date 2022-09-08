@@ -7,6 +7,7 @@ import com.cdut.epidemicsyscontrolframework.handler.AccessDeniedExceptionHandler
 import com.cdut.epidemicsyscontrolframework.handler.AuthenticationExceptionHandler;
 
 import com.cdut.epidemicsyscontrolframework.services.SysUserDetailsService;
+import com.cdut.epidemicsyscontrolframework.web.PermitAllUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -55,6 +56,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     private AccessDeniedExceptionHandler accessDeniedExceptionHandler;
 
     /**
+     * 匿名访问路径获取
+     */
+    @Autowired
+    private PermitAllUtil permitAllUtil;
+    /**
      * 解决 无法直接注入 AuthenticationManager
      *
      * @return
@@ -83,8 +89,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
      * authenticated       |   用户登录后可访问
      */
     @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception
-    {
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
+        ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry registry = httpSecurity.authorizeRequests();
+        permitAllUtil.getUrls().forEach(url -> {
+            registry.antMatchers(url).permitAll();
+        });
         httpSecurity
                 // CSRF禁用，前后端分离无需校验csrf token
                 .csrf().disable()

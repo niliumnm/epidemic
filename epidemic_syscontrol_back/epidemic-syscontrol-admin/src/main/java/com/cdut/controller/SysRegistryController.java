@@ -3,6 +3,7 @@ package com.cdut.controller;
 import com.cdut.epidemicsyscontrolcommon.utils.AjaxResult;
 import com.cdut.epidemicsyscontrolcommon.utils.MD5Util;
 import com.cdut.epidemicsyscontrolcommon.utils.SaltUtils;
+import com.cdut.epidemicsyscontrolframework.annotations.Anonymous;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
 import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
 import org.apache.ibatis.annotations.Param;
@@ -25,6 +26,7 @@ public class SysRegistryController {
 
 
     // TODO: 2022/9/1 注册接口
+    @Anonymous
     @RequestMapping(value = "/sysuser/rigister",method = POST)
     public AjaxResult registr(@Param("username")String username,@Param("password")String password){
         if (sysUserService.getSysUserByUsername(username) != null) {

@@ -8,6 +8,7 @@ import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
 import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,8 +22,9 @@ public class SysRegistryController {
 
 
     @Autowired
-    SysUserService sysUserService;
-
+    private SysUserService sysUserService;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
     // TODO: 2022/9/1 注册接口
@@ -39,14 +41,13 @@ public class SysRegistryController {
         System.out.println("一次加密: " + password);
         System.out.println(username);
 
+//        String salt = SaltUtils.getSalt(8);
+//        sysUser.setSalt(salt);
+//        System.out.println(sysUser.getSalt());
 
 
-        String salt = SaltUtils.getSalt(8);
-        sysUser.setSalt(salt);
-        System.out.println(sysUser.getSalt());
-
-
-        sysUser.setPassword(MD5Util.formPassToDBPass(password,salt));
+//        sysUser.setPassword(MD5Util.formPassToDBPass(password,salt));
+        sysUser.setPassword(bCryptPasswordEncoder.encode(password));
         System.out.println(sysUser.toString());
 
         return AjaxResult.success("注册成功", sysUserService.rigister(sysUser));

@@ -1,6 +1,8 @@
 
 package com.cdut.epidemicsyscontrolframework.config;
 
+import com.cdut.epidemicsyscontrolcommon.utils.MD5Util;
+import com.cdut.epidemicsyscontrolcommon.utils.SaltUtils;
 import com.cdut.epidemicsyscontrolframework.filters.JwtAuthenticationTokenFilter;
 
 import com.cdut.epidemicsyscontrolframework.handler.AccessDeniedExceptionHandler;
@@ -21,6 +23,7 @@ import org.springframework.security.config.annotation.web.configurers.Expression
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
 import org.springframework.web.filter.CorsFilter;
@@ -125,6 +128,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     {
         return new BCryptPasswordEncoder();
     }
+
 
     /**
      * 身份认证接口

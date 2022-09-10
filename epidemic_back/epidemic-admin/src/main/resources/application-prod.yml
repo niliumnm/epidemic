@@ -26,6 +26,7 @@ spring:
         max-idle: 8
         min-idle: 0
     timeout: 5000
+    password: hoshino12@!
   datasource:
     druid:
       username: root

@@ -32,6 +32,7 @@ spring:
       username: root
       password: 123456
       url: jdbc:mysql://host.docker.internal:3306/epidemic?useSSL=false&useUnicode=true&characterEncoding=utf-8
+
       initialSize: 5
       minIdle: 5
       maxActive: 20

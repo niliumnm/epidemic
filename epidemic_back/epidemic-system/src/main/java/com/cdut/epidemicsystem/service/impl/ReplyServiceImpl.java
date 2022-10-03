@@ -74,6 +74,11 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         return replyMapper.selectList(queryWrapper);
     }
 
+    public List<Reply> getList(Integer id) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("user_id",id);
+        return replyMapper.selectList(queryWrapper);
+    }
 }
 
 

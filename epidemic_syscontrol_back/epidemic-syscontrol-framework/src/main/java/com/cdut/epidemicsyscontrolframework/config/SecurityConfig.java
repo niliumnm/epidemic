@@ -122,7 +122,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
     /**
      * 强散列哈希加密实现
      */
-
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder()
     {

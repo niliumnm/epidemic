@@ -52,7 +52,7 @@
 
     <!--    Integer update(@Param("sysuser")SysUser sysUser);-->
 
-    <update id="update">
+    <update id="update" parameterType="com.cdut.epidemicsyscontrolsystem.pojo.SysUser">
         update t_sys_user
         <set>
             <if test="sysUser.username != null">

@@ -18,5 +18,5 @@ public interface SysUserRoleService extends IService<SysUserRole> {
 
     Integer update(SysUser sysUser, Integer roleId);
 
-
+    Integer insert(SysUserRole sysUserRole);
 }

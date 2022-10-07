@@ -15,7 +15,7 @@
         user_id,role_id,username,
         role_name
     </sql>
-    <insert id="insert">
+    <insert id="insert" parameterType="com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole">
         insert into t_sys_user_role (user_id, role_id, username, role_name) VALUE (#{sysUserRole.userId}, #{sysUserRole.roleId}, #{sysUserRole.username}, #{sysUserRole.roleName})
     </insert>
     <update id="update">

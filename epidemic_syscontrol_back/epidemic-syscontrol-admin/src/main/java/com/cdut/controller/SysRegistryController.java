@@ -5,6 +5,8 @@ import com.cdut.epidemicsyscontrolcommon.utils.MD5Util;
 import com.cdut.epidemicsyscontrolcommon.utils.SaltUtils;
 import com.cdut.epidemicsyscontrolframework.annotations.Anonymous;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
+import com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole;
+import com.cdut.epidemicsyscontrolsystem.service.SysUserRoleService;
 import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,8 @@ public class SysRegistryController {
     private SysUserService sysUserService;
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-
+    @Autowired
+    private SysUserRoleService sysUserRoleService;
 
     // TODO: 2022/9/1 注册接口
     @Anonymous
@@ -41,16 +44,10 @@ public class SysRegistryController {
         System.out.println("一次加密: " + password);
         System.out.println(username);
 
-//        String salt = SaltUtils.getSalt(8);
-//        sysUser.setSalt(salt);
-//        System.out.println(sysUser.getSalt());
-
-
-//        sysUser.setPassword(MD5Util.formPassToDBPass(password,salt));
         sysUser.setPassword(bCryptPasswordEncoder.encode(password));
         System.out.println(sysUser.toString());
 
-        return AjaxResult.success("注册成功", sysUserService.rigister(sysUser));
+        return AjaxResult.success("注册成功",sysUserService.rigister(sysUser));
 
     }
 }

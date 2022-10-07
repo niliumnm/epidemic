@@ -1,7 +1,9 @@
 package com.cdut.epidemicsyscontrolsystem.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.cdut.epidemicsyscontrolcommon.utils.RedisCache;
 import com.cdut.epidemicsyscontrolsystem.mapper.SysUserRoleMapper;
+import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
 import com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole;
 import com.cdut.epidemicsyscontrolsystem.service.SysUserRoleService;
@@ -22,6 +24,8 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
 
     @Autowired
     private SysUserRoleMapper userRoleMapper;
+    @Autowired
+    private RedisCache redisCache;
 
     @Override
     public List<String> getUserRoles(int id) {
@@ -37,7 +41,13 @@ public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUs
 //        sysUserRole.setRoleId(roleId);
         if (roleId == 1) sysUserRole.setRoleName("admin");
         if (roleId == 2) sysUserRole.setRoleName("common");
+
         return userRoleMapper.update(sysUserRole);
+    }
+
+    @Override
+    public Integer insert(SysUserRole sysUserRole) {
+        return userRoleMapper.insert(sysUserRole);
     }
 }
 

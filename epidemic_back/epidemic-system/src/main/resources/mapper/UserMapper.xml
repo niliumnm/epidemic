@@ -19,6 +19,7 @@
             <result property="weixin" column="weixin" jdbcType="VARCHAR"/>
             <result property="qq" column="qq" jdbcType="VARCHAR"/>
             <result property="salt" column="salt" jdbcType="VARCHAR"/>
+            <result property="role" column="role" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -26,7 +27,7 @@
         email,mobile,avatar_url,
         organization,department,position,
         birthday,address,weixin,
-        qq,salt
+        qq,salt,role
     </sql>
 
     <select id="getAll" resultType="com.cdut.epidemicsystem.pojo.User">
@@ -95,6 +96,9 @@
             </if>
             <if test="user.qq!=null">
                 qq=#{user.qq},
+            </if>
+            <if test="user.role!=null">
+                qq=#{user.role},
             </if>
         </set>
         <where>

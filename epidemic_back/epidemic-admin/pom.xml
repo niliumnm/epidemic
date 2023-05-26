@@ -41,6 +41,13 @@
             <artifactId>epidemic-framework</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.cdut</groupId>
+            <artifactId>epidemic-syscontrol-admin</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

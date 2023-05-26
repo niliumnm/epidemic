@@ -31,6 +31,7 @@ public class InRequest implements Serializable {
     private String mobile;
     private String idNum;
     private String home;
+    private Integer role;
 
     /**
      * 体温
@@ -89,7 +90,8 @@ public class InRequest implements Serializable {
             && (this.getDangerZone() == null ? other.getDangerZone() == null : this.getDangerZone().equals(other.getDangerZone()))
             && (this.getHealthStatus() == null ? other.getHealthStatus() == null : this.getHealthStatus().equals(other.getHealthStatus()))
             && (this.getSummary() == null ? other.getSummary() == null : this.getSummary().equals(other.getSummary()))
-            && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()));
+            && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()))
+            && (this.getRole() == null ? other.getRole() == null : this.getRole().equals(other.getRole()));
     }
 
     @Override
@@ -109,6 +111,7 @@ public class InRequest implements Serializable {
         result = prime * result + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         result = prime * result + ((getSummary() == null) ? 0 : getSummary().hashCode());
         result = prime * result + ((getTime() == null) ? 0 : getTime().hashCode());
+        result = prime * result + ((getRole() == null) ? 0 : getRole().hashCode());
         return result;
     }
 
@@ -131,6 +134,7 @@ public class InRequest implements Serializable {
         sb.append(", healthStatus=").append(healthStatus);
         sb.append(", summary=").append(summary);
         sb.append(", time=").append(time);
+        sb.append(", role=").append(role);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

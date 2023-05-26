@@ -7,6 +7,7 @@
     <resultMap id="BaseResultMap" type="com.cdut.epidemicsystem.pojo.OutRequest">
             <id property="requestId" column="request_id" jdbcType="INTEGER"/>
             <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="role" column="role" jdbcType="INTEGER"/>
             <result property="idNum" column="id_num" jdbcType="VARCHAR"/>
             <result property="temprature" column="temprature" jdbcType="DOUBLE"/>
             <result property="mask" column="mask" jdbcType="TINYINT"/>
@@ -23,6 +24,6 @@
         request_id,user_id,id_num,
         temprature,mask,track,
         health_status,summary,home,
-        name,mobile,time
+        name,mobile,time,role
     </sql>
 </mapper>

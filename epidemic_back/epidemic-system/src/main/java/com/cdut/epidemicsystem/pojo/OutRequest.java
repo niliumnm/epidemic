@@ -67,7 +67,7 @@ public class OutRequest implements Serializable {
      * 电话号码
      */
     private String mobile;
-
+    private Integer role;
     /**
      * 
      */
@@ -99,7 +99,8 @@ public class OutRequest implements Serializable {
             && (this.getHome() == null ? other.getHome() == null : this.getHome().equals(other.getHome()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
             && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
-            && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()));
+            && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()))
+            && (this.getRole() == null ? other.getRole() == null : this.getRole().equals(other.getRole()));
     }
 
     @Override
@@ -118,6 +119,7 @@ public class OutRequest implements Serializable {
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
         result = prime * result + ((getMobile() == null) ? 0 : getMobile().hashCode());
         result = prime * result + ((getTime() == null) ? 0 : getTime().hashCode());
+        result = prime * result + ((getRole() == null) ? 0 : getRole().hashCode());
         return result;
     }
 
@@ -139,6 +141,7 @@ public class OutRequest implements Serializable {
         sb.append(", name=").append(name);
         sb.append(", mobile=").append(mobile);
         sb.append(", time=").append(time);
+        sb.append(", role=").append(role);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -96,6 +96,7 @@ public class User implements Serializable {
      * 
      */
     private String salt;
+    private Integer role;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -127,7 +128,8 @@ public class User implements Serializable {
             && (this.getHome() == null ? other.getHome() == null : this.getHome().equals(other.getHome()))
             && (this.getWeixin() == null ? other.getWeixin() == null : this.getWeixin().equals(other.getWeixin()))
             && (this.getQq() == null ? other.getQq() == null : this.getQq().equals(other.getQq()))
-            && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()));
+            && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()))
+            && (this.getRole() == null ? other.getRole() == null : this.getRole().equals(other.getRole()));
     }
 
     @Override
@@ -150,6 +152,7 @@ public class User implements Serializable {
         result = prime * result + ((getWeixin() == null) ? 0 : getWeixin().hashCode());
         result = prime * result + ((getQq() == null) ? 0 : getQq().hashCode());
         result = prime * result + ((getSalt() == null) ? 0 : getSalt().hashCode());
+        result = prime * result + ((getRole() == null) ? 0 : getSalt().hashCode());
         return result;
     }
 
@@ -175,6 +178,7 @@ public class User implements Serializable {
         sb.append(", weixin=").append(weixin);
         sb.append(", qq=").append(qq);
         sb.append(", salt=").append(salt);
+        sb.append(", role=").append(role);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

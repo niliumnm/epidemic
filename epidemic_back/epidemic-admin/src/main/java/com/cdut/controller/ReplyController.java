@@ -89,7 +89,7 @@ public class ReplyController {
         User userById = replyService.getUserById(userId);
         User me = replyService.getUserById(myId);
         //鉴定权限
-        if (!(me.getRole()==role)){
+        if (!(me.getRole()==role)&&role!=99){
             boolean hasAuthority = replyService.hasAuthority(me.getRole(), userById.getRole());
             if (hasAuthority==false){
                 return AjaxResult.success("您所在的部门没有权限处理，请联系对应部门获取授权", replyService.save(reply));

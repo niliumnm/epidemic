@@ -1,6 +1,5 @@
 package com.cdut.epidemicsyscontrolcommon.utils;
 
-import org.springframework.http.HttpStatus;
 
 import java.util.HashMap;
 import java.util.Objects;

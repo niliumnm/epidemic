@@ -46,12 +46,5 @@ public class MD5Util {
         return dbPass;
     }
 
-    public static void main(String[] args) {
-        String passForm = "e10adc3949ba59abbe56e057f20f883e";//一次加密后的密码
-
-        String salt = UUID.randomUUID().toString();//DB
-        String passDB = inputPassToDbPass(passForm,salt);//DB
-        System.out.println(passDB);
-    }
 
 }

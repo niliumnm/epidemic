@@ -12,14 +12,14 @@
             <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
             <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
             <result property="organization" column="organization" jdbcType="VARCHAR"/>
-            <result property="department" column="department" jdbcType="VARCHAR"/>
+            <result property="department" column="department_name" jdbcType="VARCHAR"/>
             <result property="position" column="position" jdbcType="VARCHAR"/>
             <result property="birthday" column="birthday" jdbcType="VARCHAR"/>
             <result property="idNum" column="id_num" jdbcType="VARCHAR"/>
             <result property="weixin" column="weixin" jdbcType="VARCHAR"/>
             <result property="qq" column="qq" jdbcType="VARCHAR"/>
             <result property="salt" column="salt" jdbcType="VARCHAR"/>
-            <result property="role" column="role" jdbcType="INTEGER"/>
+            <result property="role" column="department" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -31,24 +31,24 @@
     </sql>
 
     <select id="getAll" resultType="com.cdut.epidemicsystem.pojo.User">
-        select * from t_user
+        select * from epidemic.t_user
     </select>
     <!--    User findByName(String username);-->
     <select id="findByName" resultType="com.cdut.epidemicsystem.pojo.User">
-        select * from t_user where display_name='${username}'
+        select * from epidemic.t_user where display_name='${username}'
     </select>
 
     <!--        User insert(User user);-->
     <insert id="insert">
-        insert into t_user (display_name,password,salt)values (#{user.displayName},#{user.password},#{user.salt})
+        insert into epidemic.t_user (display_name,password,salt)values (#{user.displayName},#{user.password},#{user.salt})
     </insert>
 
     <!--        String getUserByID(int id);-->
     <select id="getUserByID" resultType="com.cdut.epidemicsystem.pojo.User">
-        select * from t_user where id= #{id}
+        select * from epidemic.t_user where id= #{id}
     </select>
     <select id="getUsersByPage" resultType="com.cdut.epidemicsystem.pojo.User">
-        select * from t_user limit #{startIndex},#{size};
+        select * from epidemic.t_user limit #{startIndex},#{size};
     </select>
 
     <!--    int update(User user);-->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdut.mapper.DepartmentMapper">
+
+    <resultMap id="BaseResultMap" type="com.cdut.pojo.Department">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="masterDepartment" column="master_department_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,master_department
+    </sql>
+
+    <!--        String getUserByID(int id);-->
+    <select id="getDepartmentByID" resultMap="BaseResultMap">
+        select * from epidemic.t_vice_departments where id= #{id}
+    </select>
+
+</mapper>

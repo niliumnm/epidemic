@@ -1,13 +1,12 @@
 package com.cdut.epidemicsyscontrolframework.services;
 
-import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
-import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
-import com.cdut.epidemicsyscontrolsystem.service.SysUserRoleService;
-import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
+import com.cdut.pojo.LoginUser;
+import com.cdut.pojo.SysUser;
+import com.cdut.service.SysUserRoleService;
+import com.cdut.service.SysUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -16,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class SysUserDetailsService implements UserDetailsService {

@@ -1,6 +1,6 @@
 package com.cdut.epidemicsyscontrolframework.security;
 
-import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
+import com.cdut.pojo.LoginUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;

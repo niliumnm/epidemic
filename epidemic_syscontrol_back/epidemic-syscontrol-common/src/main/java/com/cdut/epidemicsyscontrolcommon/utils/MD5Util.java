@@ -1,5 +1,6 @@
 package com.cdut.epidemicsyscontrolcommon.utils;
 
+
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.util.UUID;

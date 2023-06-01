@@ -11,15 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-
-import com.cdut.epidemicsyscontrolframework.security.SecurityUtil;
-import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
@@ -45,65 +38,9 @@ public class ReplyController {
                            @RequestParam("summary") String summary,
                            @RequestParam("type") Integer type,
                            @RequestParam("requestId") Integer requestId,
-                           @RequestParam("myId") Integer myId) {
-        Reply reply = new Reply();
-        Integer userId=0;
-        reply.setType(type);
-        reply.setPassed(passed);
-        reply.setSummary(summary);
-
-
-
-        //HealthStatue
-
-        Integer heathStatus=0;
-        Integer mask = 0;
-        Double temprature= 0.1;
-        Integer requestID = 0;
-        Integer role = 0;
-        if (type == 1) {
-            InRequest inRequest = replyService.getInRequest(requestId);
-            heathStatus= inRequest.getHealthStatus();
-            mask = inRequest.getMask();
-            temprature = inRequest.getTemprature();
-            userId = inRequest.getUserId();
-            requestID = inRequest.getRequestId();
-            role = inRequest.getRole();
-        } else if (type==2) {
-            OutRequest outRequest = replyService.getOutRequest(requestId);
-            heathStatus=outRequest.getHealthStatus();
-            mask=outRequest.getMask();
-            temprature = outRequest.getTemprature();
-            userId = outRequest.getUserId();
-            requestID = outRequest.getRequestId();
-            role=outRequest.getRole();
-        } else if (type==3) {
-            Vistor visRequest = replyService.getVisRequest(requestId);
-            heathStatus= visRequest.getHealthStatus();
-            mask = visRequest.getMask();
-            temprature = visRequest.getTemprature();
-            userId = visRequest.getUserId();
-            requestID = visRequest.getRequestId();
-            role=visRequest.getRole();
-        }
-        User userById = replyService.getUserById(userId);
-        User me = replyService.getUserById(myId);
-        //鉴定权限
-        if (!(me.getRole()==role)&&role!=99){
-            boolean hasAuthority = replyService.hasAuthority(me.getRole(), userById.getRole());
-            if (hasAuthority==false){
-                return AjaxResult.success("您所在的部门没有权限处理，请联系对应部门获取授权", replyService.save(reply));
-            }
-        }
-        reply.setName(userById.getDisplayName());
-        reply.setMobile(userById.getMobile());
-        reply.setHealthStatue(heathStatus);
-        reply.setMask(mask);
-        reply.setTemprature(temprature);
-        reply.setUserId(userId);
-        reply.setRequestId(requestID);
-
-        return AjaxResult.success("回复成功", replyService.save(reply));
+                           @RequestParam("sysUserId") Integer sysUserId) {
+        System.out.println("front Reply:" + sysUserId);
+        return replyService.postRequest(passed, summary, type, requestId, sysUserId);
     }
 
     @Operation(description = "请求查回复")

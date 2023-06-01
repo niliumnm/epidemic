@@ -1,21 +1,16 @@
 package com.cdut.controller;
 
 import com.cdut.epidemicsyscontrolcommon.utils.AjaxResult;
-import com.cdut.epidemicsyscontrolcommon.utils.JWTUtil;
 import com.cdut.epidemicsyscontrolcommon.utils.RedisCache;
 import com.cdut.epidemicsyscontrolframework.security.SecurityUtil;
-import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
-import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
-import com.cdut.epidemicsyscontrolsystem.service.RoleService;
-import com.cdut.epidemicsyscontrolsystem.service.SysUserRoleService;
-import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
-import io.swagger.v3.oas.models.security.SecurityScheme;
-import org.apache.ibatis.annotations.Param;
+import com.cdut.pojo.LoginUser;
+import com.cdut.pojo.SysUser;
+import com.cdut.service.SysUserRoleService;
+import com.cdut.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Security;
 import java.util.HashSet;
 import java.util.List;
 

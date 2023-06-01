@@ -2,13 +2,12 @@ package com.cdut.epidemicsystem.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.epidemicsystem.mapper.*;
 import com.cdut.epidemicsystem.pojo.*;
-import com.cdut.epidemicsystem.service.DepartmentService;
 import com.cdut.epidemicsystem.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cdut.epidemicsystem.service.DepartmentService;
 
 
 import java.util.Date;
@@ -38,8 +37,6 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
     @Autowired
     private ReplyMapper replyMapper;
 
-    @Autowired
-    private DepartmentService departmentService;
 
 
     public User getUserById(Integer userId) {
@@ -86,14 +83,65 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         return replyMapper.selectList(queryWrapper);
     }
 
-    public boolean hasAuthority(Integer role1, Integer role2) {
-        int vice_department=-1;
-        Integer masterDepartment1 = departmentService.getDepartmentByID(role1).getMaster_department();
-        Integer masterDepartment2 = departmentService.getDepartmentByID(role2).getMaster_department();
-        if (masterDepartment1==masterDepartment2) {
-            return true;
+
+    @Override
+    public AjaxResult postRequest(Integer passed, String summary, Integer type, Integer requestId, Integer myId) {
+        Reply reply = new Reply();
+        Integer userId=0;
+        reply.setType(type);
+        reply.setPassed(passed);
+        reply.setSummary(summary);
+
+
+
+        //HealthStatue
+        Integer heathStatus=0;
+        Integer mask = 0;
+        Double temprature= 0.1;
+        Integer requestID = 0;
+        Integer department = 0;
+        // 进门
+        if (type == 1) {
+            InRequest inRequest = getInRequest(requestId);
+            heathStatus= inRequest.getHealthStatus();
+            mask = inRequest.getMask();
+            temprature = inRequest.getTemprature();
+            userId = inRequest.getUserId();
+            requestID = inRequest.getRequestId();
+            department = inRequest.getDepartment();
         }
-        return false;
+        // 出门
+        else if (type==2) {
+            OutRequest outRequest = getOutRequest(requestId);
+            heathStatus=outRequest.getHealthStatus();
+            mask=outRequest.getMask();
+            temprature = outRequest.getTemprature();
+            userId = outRequest.getUserId();
+            requestID = outRequest.getRequestId();
+            department=outRequest.getRole();
+        }
+        // 外来
+        else if (type==3) {
+            Vistor visRequest = getVisRequest(requestId);
+            heathStatus= visRequest.getHealthStatus();
+            mask = visRequest.getMask();
+            temprature = visRequest.getTemprature();
+            userId = visRequest.getUserId();
+            requestID = visRequest.getRequestId();
+            department=visRequest.getRole();
+        }
+        // 提交申请的人
+        User applicant = getUserById(userId);
+
+        reply.setName(applicant.getDisplayName());
+        reply.setMobile(applicant.getMobile());
+        reply.setHealthStatue(heathStatus);
+        reply.setMask(mask);
+        reply.setTemprature(temprature);
+        reply.setUserId(userId);
+        reply.setRequestId(requestID);
+        save(reply);
+        return AjaxResult.success("回复成功", applicant);
     }
 }
 

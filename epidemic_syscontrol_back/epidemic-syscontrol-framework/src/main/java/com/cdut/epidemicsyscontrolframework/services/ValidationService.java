@@ -1,7 +1,7 @@
 package com.cdut.epidemicsyscontrolframework.services;
 
 import com.cdut.epidemicsyscontrolframework.security.AuthenticationContextHolder;
-import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
+import com.cdut.pojo.SysUser;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 

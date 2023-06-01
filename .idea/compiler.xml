@@ -18,8 +18,31 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="epidemic" target="1.5" />
+      <module name="epidemic (1)" target="8" />
+      <module name="epidemic (1) (com.cdut)" target="8" />
+      <module name="epidemic (1) (org.example)" target="1.5" />
+      <module name="epidemic (2)" target="1.5" />
+      <module name="epidemic (2) (org.example)" target="1.5" />
+      <module name="epidemic (3) (org.example)" target="1.5" />
+      <module name="epidemic-admin" target="8" />
+      <module name="epidemic-admin (1)" target="8" />
+      <module name="epidemic-common" target="8" />
+      <module name="epidemic-common (1)" target="8" />
+      <module name="epidemic-framework" target="8" />
+      <module name="epidemic-framework (1)" target="8" />
+      <module name="epidemic-syscontrol-admin" target="8" />
+      <module name="epidemic-syscontrol-admin (1)" target="8" />
+      <module name="epidemic-syscontrol-common" target="8" />
+      <module name="epidemic-syscontrol-common (1)" target="8" />
+      <module name="epidemic-syscontrol-framework" target="8" />
+      <module name="epidemic-syscontrol-framework (1)" target="8" />
+      <module name="epidemic-syscontrol-system" target="8" />
+      <module name="epidemic-syscontrol-system (1)" target="8" />
+      <module name="epidemic-system" target="8" />
+      <module name="epidemic-system (1)" target="8" />
       <module name="epidemic_back" target="8" />
+      <module name="epidemic_syscontrol_back" target="8" />
+      <module name="epidemic_syscontrol_back (1)" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

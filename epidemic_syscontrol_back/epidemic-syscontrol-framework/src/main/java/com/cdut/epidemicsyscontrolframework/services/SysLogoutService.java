@@ -2,7 +2,7 @@ package com.cdut.epidemicsyscontrolframework.services;
 
 import com.cdut.epidemicsyscontrolcommon.utils.RedisCache;
 import com.cdut.epidemicsyscontrolframework.security.SecurityUtil;
-import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
+import com.cdut.pojo.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

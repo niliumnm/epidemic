@@ -2,17 +2,15 @@ package com.cdut.controller;
 
 import com.cdut.epidemicsyscontrolcommon.utils.AjaxResult;
 import com.cdut.epidemicsyscontrolframework.security.SecurityUtil;
-import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
+import com.cdut.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;

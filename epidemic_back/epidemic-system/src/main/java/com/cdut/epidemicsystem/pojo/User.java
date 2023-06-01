@@ -65,7 +65,7 @@ public class User implements Serializable {
     /**
      * 
      */
-    private String department;
+    private String departmentName;
 
     /**
      * 
@@ -96,7 +96,7 @@ public class User implements Serializable {
      * 
      */
     private String salt;
-    private Integer role;
+    private Integer department;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -122,14 +122,14 @@ public class User implements Serializable {
             && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
             && (this.getAvatarUrl() == null ? other.getAvatarUrl() == null : this.getAvatarUrl().equals(other.getAvatarUrl()))
             && (this.getOrganization() == null ? other.getOrganization() == null : this.getOrganization().equals(other.getOrganization()))
-            && (this.getDepartment() == null ? other.getDepartment() == null : this.getDepartment().equals(other.getDepartment()))
+            && (this.getDepartmentName() == null ? other.getDepartmentName() == null : this.getDepartmentName().equals(other.getDepartmentName()))
             && (this.getPosition() == null ? other.getPosition() == null : this.getPosition().equals(other.getPosition()))
             && (this.getBirthday() == null ? other.getBirthday() == null : this.getBirthday().equals(other.getBirthday()))
             && (this.getHome() == null ? other.getHome() == null : this.getHome().equals(other.getHome()))
             && (this.getWeixin() == null ? other.getWeixin() == null : this.getWeixin().equals(other.getWeixin()))
             && (this.getQq() == null ? other.getQq() == null : this.getQq().equals(other.getQq()))
             && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()))
-            && (this.getRole() == null ? other.getRole() == null : this.getRole().equals(other.getRole()));
+            && (this.getDepartment() == null ? other.getDepartment() == null : this.getDepartment().equals(other.getDepartment()));
     }
 
     @Override
@@ -145,14 +145,14 @@ public class User implements Serializable {
         result = prime * result + ((getMobile() == null) ? 0 : getMobile().hashCode());
         result = prime * result + ((getAvatarUrl() == null) ? 0 : getAvatarUrl().hashCode());
         result = prime * result + ((getOrganization() == null) ? 0 : getOrganization().hashCode());
-        result = prime * result + ((getDepartment() == null) ? 0 : getDepartment().hashCode());
+        result = prime * result + ((getDepartmentName() == null) ? 0 : getDepartmentName().hashCode());
         result = prime * result + ((getPosition() == null) ? 0 : getPosition().hashCode());
         result = prime * result + ((getBirthday() == null) ? 0 : getBirthday().hashCode());
         result = prime * result + ((getHome() == null) ? 0 : getHome().hashCode());
         result = prime * result + ((getWeixin() == null) ? 0 : getWeixin().hashCode());
         result = prime * result + ((getQq() == null) ? 0 : getQq().hashCode());
         result = prime * result + ((getSalt() == null) ? 0 : getSalt().hashCode());
-        result = prime * result + ((getRole() == null) ? 0 : getSalt().hashCode());
+        result = prime * result + ((getDepartment() == null) ? 0 : getSalt().hashCode());
         return result;
     }
 
@@ -171,14 +171,14 @@ public class User implements Serializable {
         sb.append(", mobile=").append(mobile);
         sb.append(", avatarUrl=").append(avatarUrl);
         sb.append(", organization=").append(organization);
-        sb.append(", department=").append(department);
+        sb.append(", departmentName=").append(departmentName);
         sb.append(", position=").append(position);
         sb.append(", birthday=").append(birthday);
         sb.append(", home=").append(home);
         sb.append(", weixin=").append(weixin);
         sb.append(", qq=").append(qq);
         sb.append(", salt=").append(salt);
-        sb.append(", role=").append(role);
+        sb.append(", role=").append(department);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

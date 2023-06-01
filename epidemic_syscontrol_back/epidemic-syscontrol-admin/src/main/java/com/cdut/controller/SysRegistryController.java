@@ -1,20 +1,14 @@
 package com.cdut.controller;
 
 import com.cdut.epidemicsyscontrolcommon.utils.AjaxResult;
-import com.cdut.epidemicsyscontrolcommon.utils.MD5Util;
-import com.cdut.epidemicsyscontrolcommon.utils.SaltUtils;
 import com.cdut.epidemicsyscontrolframework.annotations.Anonymous;
-import com.cdut.epidemicsyscontrolsystem.pojo.SysUser;
-import com.cdut.epidemicsyscontrolsystem.pojo.SysUserRole;
-import com.cdut.epidemicsyscontrolsystem.service.SysUserRoleService;
-import com.cdut.epidemicsyscontrolsystem.service.SysUserService;
+import com.cdut.pojo.SysUser;
+import com.cdut.service.SysUserRoleService;
+import com.cdut.service.SysUserService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RestController;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;

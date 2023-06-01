@@ -35,7 +35,7 @@ public class InRequestServiceImpl extends ServiceImpl<InRequestMapper, InRequest
         inRequest.setMobile(user.getMobile());
         inRequest.setIdNum(user.getIdNum());
         inRequest.setHome(user.getHome());
-        inRequest.setRole(user.getRole());
+        inRequest.setDepartment(user.getDepartment());
 
         return AjaxResult.success("发送成功", inRequestDao.insert(inRequest));
     }

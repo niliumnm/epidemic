@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cdut.epidemicsyscontrolsystem.mapper.SysUserMapper">
+<mapper namespace="com.cdut.mapper.SysUserMapper">
 
-    <resultMap id="BaseResultMap" type="com.cdut.epidemicsyscontrolsystem.pojo.SysUser">
+    <resultMap id="BaseResultMap" type="com.cdut.pojo.SysUser">
         <id property="id" column="id" jdbcType="INTEGER"/>
         <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="password" column="password" jdbcType="VARCHAR"/>
@@ -35,7 +35,7 @@
         update t_sys_user set avatar_url=#{avatar} where username=#{username};
     </update>
 
-    <select id="getSysUserByUsername" resultType="com.cdut.epidemicsyscontrolsystem.pojo.SysUser">
+    <select id="getSysUserByUsername" resultType="com.cdut.pojo.SysUser">
         select * from t_sys_user where username=#{username};
     </select>
     <select id="getAvatarByUsername" resultType="java.lang.String">
@@ -52,7 +52,7 @@
 
     <!--    Integer update(@Param("sysuser")SysUser sysUser);-->
 
-    <update id="update" parameterType="com.cdut.epidemicsyscontrolsystem.pojo.SysUser">
+    <update id="update" parameterType="com.cdut.pojo.SysUser">
         update t_sys_user
         <set>
             <if test="sysUser.username != null">

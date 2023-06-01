@@ -3,7 +3,7 @@ package com.cdut.epidemicsyscontrolframework.services;
 import com.cdut.epidemicsyscontrolcommon.utils.JWTUtil;
 import com.cdut.epidemicsyscontrolcommon.utils.RedisCache;
 import com.cdut.epidemicsyscontrolframework.security.AuthenticationContextHolder;
-import com.cdut.epidemicsyscontrolsystem.pojo.LoginUser;
+import com.cdut.pojo.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

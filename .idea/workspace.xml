@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef96f9c9-0fd1-44dd-9b8a-f9c36e59ae7e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/docker-deploy/user_system/epidemic-admin-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/docker-deploy/user_system/epidemic-admin-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epidemic_back/epidemic-admin/src/test/java/com/cdut/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/epidemic_back/epidemic-admin/src/test/java/com/cdut/UserTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="ef96f9c9-0fd1-44dd-9b8a-f9c36e59ae7e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,7 +200,7 @@
       <workItem from="1685606012292" duration="429000" />
       <workItem from="1685606526242" duration="33000" />
       <workItem from="1685606629107" duration="10832000" />
-      <workItem from="1685620273137" duration="8018000" />
+      <workItem from="1685620273137" duration="8362000" />
     </task>
     <servers />
   </component>

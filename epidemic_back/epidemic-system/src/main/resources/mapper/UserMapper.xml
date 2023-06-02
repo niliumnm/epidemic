@@ -12,14 +12,14 @@
             <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
             <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
             <result property="organization" column="organization" jdbcType="VARCHAR"/>
-            <result property="department" column="department_name" jdbcType="VARCHAR"/>
+            <result property="departmentName" column="department_name" jdbcType="VARCHAR"/>
             <result property="position" column="position" jdbcType="VARCHAR"/>
             <result property="birthday" column="birthday" jdbcType="VARCHAR"/>
             <result property="idNum" column="id_num" jdbcType="VARCHAR"/>
             <result property="weixin" column="weixin" jdbcType="VARCHAR"/>
             <result property="qq" column="qq" jdbcType="VARCHAR"/>
             <result property="salt" column="salt" jdbcType="VARCHAR"/>
-            <result property="role" column="department" jdbcType="INTEGER"/>
+            <result property="department" column="department" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -53,7 +53,7 @@
 
     <!--    int update(User user);-->
     <update id="update">
-        update  t_user
+        update  epidemic.t_user
         <set>
             <if test="user.displayName!=null">
                 display_name=#{user.displayName},
@@ -70,8 +70,8 @@
             <if test="user.organization!=null">
                 organization=#{user.organization},
             </if>
-            <if test="user.department!=null">
-                department=#{user.department},
+            <if test="user.departmentName!=null">
+                department_name=#{user.departmentName},
             </if>
             <if test="user.position!=null">
                 position=#{user.position},
@@ -97,8 +97,8 @@
             <if test="user.qq!=null">
                 qq=#{user.qq},
             </if>
-            <if test="user.role!=null">
-                qq=#{user.role},
+            <if test="user.department!=null">
+                department=#{user.department},
             </if>
         </set>
         <where>
@@ -108,7 +108,7 @@
 
     <!--Integer deleteByID(@Param("id") Integer id);-->
     <delete id="deleteByID">
-        delete from t_user where id=#{id}
+        delete from epidemic.t_user where id=#{id}
     </delete>
 
 </mapper>

@@ -111,7 +111,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserTest.userGetIdTest">
+  <component name="RunManager" selected="Spring Boot.EpidemicAdminApplication">
     <configuration name="5.26日 11点39.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/resource/5.26日 11点39.sql" />
       <script-mode>FILE</script-mode>

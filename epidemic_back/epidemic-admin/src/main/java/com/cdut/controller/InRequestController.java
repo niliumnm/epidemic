@@ -3,9 +3,7 @@ package com.cdut.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
 import com.cdut.epidemic_common.utils.AjaxResult;
-import com.cdut.epidemic_common.utils.Page;
 import com.cdut.epidemicsystem.pojo.InRequest;
-import com.cdut.epidemicsystem.pojo.User;
 import com.cdut.epidemicsystem.service.InRequestService;
 import com.cdut.epidemicsystem.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -80,7 +78,4 @@ public class InRequestController {
         List<InRequest> inRequests = inRequestService.getPage(pageNum, pageSize, name);
         return AjaxResult.success(inRequests);
     }
-
-
-
 }

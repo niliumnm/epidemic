@@ -62,6 +62,7 @@ public class InRequest implements Serializable {
      * 
      */
     private Date time;
+    private Date enterTime;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -91,6 +92,7 @@ public class InRequest implements Serializable {
             && (this.getHealthStatus() == null ? other.getHealthStatus() == null : this.getHealthStatus().equals(other.getHealthStatus()))
             && (this.getSummary() == null ? other.getSummary() == null : this.getSummary().equals(other.getSummary()))
             && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()))
+            && (this.getEnterTime() == null ? other.getEnterTime() == null : this.getEnterTime().equals(other.getEnterTime()))
             && (this.getDepartment() == null ? other.getDepartment() == null : this.getDepartment().equals(other.getDepartment()));
     }
 
@@ -111,6 +113,7 @@ public class InRequest implements Serializable {
         result = prime * result + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
         result = prime * result + ((getSummary() == null) ? 0 : getSummary().hashCode());
         result = prime * result + ((getTime() == null) ? 0 : getTime().hashCode());
+        result = prime * result + ((getEnterTime() == null) ? 0 : getEnterTime().hashCode());
         result = prime * result + ((getDepartment() == null) ? 0 : getDepartment().hashCode());
         return result;
     }
@@ -135,6 +138,7 @@ public class InRequest implements Serializable {
         sb.append(", summary=").append(summary);
         sb.append(", time=").append(time);
         sb.append(", role=").append(getDepartment());
+        sb.append(", leaveTime=").append(getEnterTime());
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

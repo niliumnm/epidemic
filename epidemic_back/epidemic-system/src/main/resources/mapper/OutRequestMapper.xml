@@ -18,12 +18,13 @@
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
             <result property="time" column="time" jdbcType="TIMESTAMP"/>
+            <result property="leaveTime" column="leave_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         request_id,user_id,id_num,
         temprature,mask,track,
         health_status,summary,home,
-        name,mobile,time,role
+        name,mobile,time,role,leave_time
     </sql>
 </mapper>

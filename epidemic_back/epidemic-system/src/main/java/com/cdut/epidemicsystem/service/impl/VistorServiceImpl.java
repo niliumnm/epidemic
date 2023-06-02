@@ -33,6 +33,7 @@ public class VistorServiceImpl extends ServiceImpl<VistorMapper, Vistor>
         vistorRequest.setMobile(user.getMobile());
         vistorRequest.setIdNum(user.getIdNum());
         vistorRequest.setHome(user.getHome());
+        vistorRequest.setRole(user.getDepartment());
         return vistorMapper.insert(vistorRequest);
     }
 

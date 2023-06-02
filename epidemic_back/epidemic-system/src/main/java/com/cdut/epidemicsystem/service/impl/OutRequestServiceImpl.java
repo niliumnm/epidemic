@@ -37,6 +37,7 @@ public class OutRequestServiceImpl extends ServiceImpl<OutRequestMapper, OutRequ
         outRequest.setIdNum(user.getIdNum());
         outRequest.setMobile(user.getMobile());
         outRequest.setHome(user.getHome());
+        outRequest.setRole(user.getDepartment());
         return outRequestDao.insert(outRequest);
     }
 

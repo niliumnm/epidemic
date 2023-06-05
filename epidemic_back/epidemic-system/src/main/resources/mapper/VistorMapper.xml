@@ -16,6 +16,7 @@
             <result property="source" column="source" jdbcType="VARCHAR"/>
             <result property="summary" column="summary" jdbcType="VARCHAR"/>
             <result property="time" column="time" jdbcType="TIMESTAMP"/>
+            <result property="enterTime" column="enter_time" jdbcType="TIMESTAMP"/>
             <result property="name" column="name" jdbcType="TIMESTAMP"/>
             <result property="gender" column="gender" jdbcType="TIMESTAMP"/>
             <result property="mobile" column="mobile" jdbcType="TIMESTAMP"/>
@@ -26,7 +27,7 @@
     <sql id="Base_Column_List">
         request_id,user_id,name,gender,mobile,id_num,home,temprature,
         mask,danger_zone,health_status,
-        reason,source,summary,
+        reason,source,summary,enter_time
         time,role
     </sql>
 </mapper>

@@ -30,6 +30,7 @@ public class InRequestServiceImpl extends ServiceImpl<InRequestMapper, InRequest
     @Override
     public AjaxResult postRequest(InRequest inRequest) {
         User user = userMapper.getUserByID(inRequest.getUserId());
+        System.out.println(user);
         inRequest.setName(user.getDisplayName());
         inRequest.setGender(user.getGender());
         inRequest.setMobile(user.getMobile());

@@ -100,6 +100,7 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         Double temprature= 0.1;
         Integer requestID = 0;
         Integer department = 0;
+        Date desireTime=new Date();
         // 进门
         if (type == 1) {
             InRequest inRequest = getInRequest(requestId);
@@ -109,6 +110,7 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
             userId = inRequest.getUserId();
             requestID = inRequest.getRequestId();
             department = inRequest.getDepartment();
+            desireTime = inRequest.getEnterTime();
         }
         // 出门
         else if (type==2) {
@@ -119,6 +121,7 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
             userId = outRequest.getUserId();
             requestID = outRequest.getRequestId();
             department=outRequest.getRole();
+            desireTime = outRequest.getLeaveTime();
         }
         // 外来
         else if (type==3) {
@@ -129,6 +132,7 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
             userId = visRequest.getUserId();
             requestID = visRequest.getRequestId();
             department=visRequest.getRole();
+            desireTime = visRequest.getEnterTime();
         }
         // 提交申请的人
         User applicant = getUserById(userId);
@@ -140,6 +144,7 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         reply.setTemprature(temprature);
         reply.setUserId(userId);
         reply.setRequestId(requestID);
+        reply.setDesireTime(desireTime);
         save(reply);
         return AjaxResult.success("回复成功", applicant);
     }

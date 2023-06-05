@@ -156,28 +156,24 @@ public class SysUser implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", username=").append(username);
-        sb.append(", password=").append(password);
-        sb.append(", salt=").append(salt);
-        sb.append(", education=").append(education);
-        sb.append(", phone=").append(phone);
-        sb.append(", address=").append(address);
-        sb.append(", sign=").append(sign);
-        sb.append(", realName=").append(realName);
-        sb.append(", nickName=").append(nickName);
-        sb.append(", email=").append(email);
-        sb.append(", school=").append(school);
-        sb.append(", idCardNum=").append(idCardNum);
-        sb.append(", gender=").append(gender);
-        sb.append(", birthday=").append(birthday);
-        sb.append(", avatarUrl=").append(avatarUrl);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+        return "SysUser{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", education='" + education + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", sign='" + sign + '\'' +
+                ", realName='" + realName + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", email='" + email + '\'' +
+                ", school='" + school + '\'' +
+                ", idCardNum='" + idCardNum + '\'' +
+                ", gender=" + gender +
+                ", birthday=" + birthday +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", department=" + department +
+                '}';
     }
 }

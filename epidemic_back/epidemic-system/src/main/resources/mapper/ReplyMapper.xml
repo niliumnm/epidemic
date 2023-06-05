@@ -10,6 +10,7 @@
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
             <result property="time" column="time" jdbcType="TIMESTAMP"/>
+            <result property="desireTime" column="desire_time" jdbcType="TIMESTAMP"/>
             <result property="type" column="type" jdbcType="INTEGER"/>
             <result property="healthStatue" column="health_statue" jdbcType="INTEGER"/>
             <result property="mask" column="mask" jdbcType="INTEGER"/>
@@ -20,7 +21,7 @@
 
     <sql id="Base_Column_List">
         rep_id,user_id,name,
-        mobile,time,type,
+        mobile,time,,desire_time,type,
         health_statue,mask,summary,
         passed,temprature
     </sql>

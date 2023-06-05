@@ -71,6 +71,7 @@ public class Vistor implements Serializable {
      * 
      */
     private Date time;
+    private Date enterTime;
     private Integer role;
 
     @TableField(exist = false)
@@ -103,6 +104,7 @@ public class Vistor implements Serializable {
             && (this.getSource() == null ? other.getSource() == null : this.getSource().equals(other.getSource()))
             && (this.getSummary() == null ? other.getSummary() == null : this.getSummary().equals(other.getSummary()))
             && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()))
+            && (this.getEnterTime() == null ? other.getEnterTime() == null : this.getEnterTime().equals(other.getEnterTime()))
             && (this.getRole() == null ? other.getRole() == null : this.getRole().equals(other.getRole()));
     }
 
@@ -125,6 +127,7 @@ public class Vistor implements Serializable {
         result = prime * result + ((getSource() == null) ? 0 : getSource().hashCode());
         result = prime * result + ((getSummary() == null) ? 0 : getSummary().hashCode());
         result = prime * result + ((getTime() == null) ? 0 : getTime().hashCode());
+        result = prime * result + ((getEnterTime() == null) ? 0 : getEnterTime().hashCode());
         result = prime * result + ((getRole() == null) ? 0 : getRole().hashCode());
         return result;
     }
@@ -150,6 +153,7 @@ public class Vistor implements Serializable {
         sb.append(", source=").append(source);
         sb.append(", summary=").append(summary);
         sb.append(", time=").append(time);
+        sb.append(", enterTime=").append(enterTime);
         sb.append(", role=").append(role);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

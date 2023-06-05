@@ -14,11 +14,12 @@
             <result property="healthStatus" column="health_status" jdbcType="INTEGER"/>
             <result property="summary" column="summary" jdbcType="VARCHAR"/>
             <result property="time" column="time" jdbcType="TIMESTAMP"/>
+            <result property="enterTime" column="enter_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         request_id,user_id,temprature,
         mask,danger_zone,health_status,
-        summary,time,role
+        summary,time,role,leave_time
     </sql>
 </mapper>

@@ -40,6 +40,7 @@ public class Reply implements Serializable {
      * 
      */
     private Date time;
+    private Date desireTime;
 
     /**
      * 1进2出3外来
@@ -98,6 +99,7 @@ public class Reply implements Serializable {
             && (this.getMask() == null ? other.getMask() == null : this.getMask().equals(other.getMask()))
             && (this.getSummary() == null ? other.getSummary() == null : this.getSummary().equals(other.getSummary()))
             && (this.getPassed() == null ? other.getPassed() == null : this.getPassed().equals(other.getPassed()))
+            && (this.getDesireTime() == null ? other.getDesireTime() == null : this.getDesireTime().equals(other.getDesireTime()))
             && (this.getTemprature() == null ? other.getTemprature() == null : this.getTemprature().equals(other.getTemprature()));
     }
 
@@ -111,6 +113,7 @@ public class Reply implements Serializable {
         result = prime * result + ((getMobile() == null) ? 0 : getMobile().hashCode());
         result = prime * result + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         result = prime * result + ((getTime() == null) ? 0 : getTime().hashCode());
+        result = prime * result + ((getDesireTime() == null) ? 0 : getDesireTime().hashCode());
         result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         result = prime * result + ((getHealthStatue() == null) ? 0 : getHealthStatue().hashCode());
         result = prime * result + ((getMask() == null) ? 0 : getMask().hashCode());
@@ -132,6 +135,7 @@ public class Reply implements Serializable {
         sb.append(", requestId=").append(requestId);
         sb.append(", mobile=").append(mobile);
         sb.append(", time=").append(time);
+        sb.append(", desireTime=").append(desireTime);
         sb.append(", type=").append(type);
         sb.append(", healthStatue=").append(healthStatue);
         sb.append(", mask=").append(mask);

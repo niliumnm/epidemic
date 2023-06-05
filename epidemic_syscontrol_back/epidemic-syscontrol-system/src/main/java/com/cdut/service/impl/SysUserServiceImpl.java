@@ -69,6 +69,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser>
             String salt = sysUser.getSalt();
             sysUser.setPassword(MD5Util.formPassToDBPass(password, salt));
         }
+        System.out.println(sysUser);
         return sysUserMapper.update(sysUser);
     }
 }

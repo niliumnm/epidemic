@@ -32,19 +32,19 @@
         avatar_url
     </sql>
     <update id="saveAvatarUrl">
-        update t_sys_user set avatar_url=#{avatar} where username=#{username};
+        update epidemic.t_sys_user set avatar_url=#{avatar} where username=#{username};
     </update>
 
     <select id="getSysUserByUsername" resultType="com.cdut.pojo.SysUser">
-        select * from t_sys_user where username=#{username};
+        select * from epidemic.t_sys_user where username=#{username};
     </select>
     <select id="getAvatarByUsername" resultType="java.lang.String">
-        select avatar_url from t_sys_user where username=#{username};
+        select avatar_url from epidemic.t_sys_user where username=#{username};
     </select>
 
 
     <insert id="insert">
-        insert into t_sys_user (username, password, salt) value (#{sysUser.username}, #{sysUser.password}, #{sysUser.salt})
+        insert into epidemic.t_sys_user (username, password, salt) value (#{sysUser.username}, #{sysUser.password}, #{sysUser.salt})
     </insert>
 
 
@@ -53,7 +53,7 @@
     <!--    Integer update(@Param("sysuser")SysUser sysUser);-->
 
     <update id="update" parameterType="com.cdut.pojo.SysUser">
-        update t_sys_user
+        update epidemic.t_sys_user
         <set>
             <if test="sysUser.username != null">
                 username = #{sysUser.username},
@@ -92,7 +92,10 @@
                 birthday = #{sysUser.birthday},
             </if>
             <if test="sysUser.avatarUrl != null">
-                avatar_url = #{sysUser.avatarUrl}
+                avatar_url = #{sysUser.avatarUrl},
+            </if>
+            <if test="sysUser.department != null">
+                department = #{sysUser.department}
             </if>
         </set>
         <where>

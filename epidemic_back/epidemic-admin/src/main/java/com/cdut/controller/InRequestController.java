@@ -27,6 +27,7 @@ public class InRequestController {
     @Operation(description = "发送进门请求")
     @RequestMapping(value = "/in/post", method = POST)
     AjaxResult postRequest(@RequestBody InRequest inRequest) {
+        System.out.println(inRequest);
         if (inRequest.getTemprature()==null||inRequest.getHealthStatus()==null||inRequest.getMask()==null||inRequest.getDangerZone()==null) {
             return AjaxResult.error("请完整填写表单");
         }

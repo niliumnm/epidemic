@@ -1,9 +1,10 @@
-package com.cdut.service.impl;
+package com.cdut.epidemicsystem.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.cdut.mapper.DepartmentMapper;
-import com.cdut.pojo.Department;
-import com.cdut.service.DepartmentService;
+
+import com.cdut.epidemicsystem.mapper.DepartmentMapper;
+import com.cdut.epidemicsystem.pojo.Department;
+import com.cdut.epidemicsystem.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

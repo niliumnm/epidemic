@@ -1,8 +1,8 @@
-package com.cdut.mapper;
+package com.cdut.epidemicsystem.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-import com.cdut.pojo.Department;
+import com.cdut.epidemicsystem.pojo.Department;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

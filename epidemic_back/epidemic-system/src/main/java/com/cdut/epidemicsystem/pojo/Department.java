@@ -1,4 +1,4 @@
-package com.cdut.pojo;
+package com.cdut.epidemicsystem.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

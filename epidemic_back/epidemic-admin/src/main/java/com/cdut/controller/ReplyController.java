@@ -38,9 +38,9 @@ public class ReplyController {
                            @RequestParam("summary") String summary,
                            @RequestParam("type") Integer type,
                            @RequestParam("requestId") Integer requestId,
-                           @RequestParam("sysUserId") Integer sysUserId) {
-        System.out.println("front Reply:" + sysUserId);
-        return replyService.postRequest(passed, summary, type, requestId, sysUserId);
+                           @RequestParam("department") Integer department) {
+        System.out.println("front Reply:" + department);
+        return replyService.postRequest(passed, summary, type, requestId, department);
     }
 
     @Operation(description = "请求查回复")

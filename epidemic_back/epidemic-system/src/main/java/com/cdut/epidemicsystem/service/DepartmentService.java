@@ -1,7 +1,8 @@
-package com.cdut.service;
+package com.cdut.epidemicsystem.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.cdut.pojo.Department;
+import com.cdut.epidemicsystem.pojo.Department;
+
 
 /**
 * @author 47345

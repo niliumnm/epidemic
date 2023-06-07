@@ -73,6 +73,7 @@ public class OutRequest implements Serializable {
      */
     private Date time;
     private Date leaveTime;
+    private Integer department;
 
 
     @TableField(exist = false)
@@ -103,6 +104,7 @@ public class OutRequest implements Serializable {
             && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
             && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()))
             && (this.getLeaveTime() == null ? other.getLeaveTime() == null : this.getLeaveTime().equals(other.getLeaveTime()))
+            && (this.getDepartment() == null ? other.getDepartment() == null : this.getDepartment().equals(other.getDepartment()))
             && (this.getRole() == null ? other.getRole() == null : this.getRole().equals(other.getRole()));
     }
 
@@ -123,6 +125,7 @@ public class OutRequest implements Serializable {
         result = prime * result + ((getMobile() == null) ? 0 : getMobile().hashCode());
         result = prime * result + ((getTime() == null) ? 0 : getTime().hashCode());
         result = prime * result + ((getLeaveTime() == null) ? 0 : getLeaveTime().hashCode());
+        result = prime * result + ((getDepartment() == null) ? 0 : getDepartment().hashCode());
         result = prime * result + ((getRole() == null) ? 0 : getRole().hashCode());
         return result;
     }
@@ -146,6 +149,7 @@ public class OutRequest implements Serializable {
         sb.append(", mobile=").append(mobile);
         sb.append(", time=").append(time);
         sb.append(", leaveTime=").append(leaveTime);
+        sb.append(", department=").append(department);
         sb.append(", role=").append(role);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

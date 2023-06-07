@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cdut.mapper.DepartmentMapper">
+<mapper namespace="com.cdut.epidemicsystem.mapper.DepartmentMapper">
 
-    <resultMap id="BaseResultMap" type="com.cdut.pojo.Department">
+    <resultMap id="BaseResultMap" type="com.cdut.epidemicsystem.pojo.Department">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="masterDepartment" column="master_department_id" jdbcType="INTEGER"/>

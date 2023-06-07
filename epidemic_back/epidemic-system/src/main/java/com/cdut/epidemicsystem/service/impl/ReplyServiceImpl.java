@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cdut.epidemic_common.utils.AjaxResult;
 import com.cdut.epidemicsystem.mapper.*;
 import com.cdut.epidemicsystem.pojo.*;
+import com.cdut.epidemicsystem.service.DepartmentService;
 import com.cdut.epidemicsystem.service.ReplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,8 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
 
     @Autowired
     private ReplyMapper replyMapper;
+    @Autowired
+    private DepartmentService departmentService;
 
 
 
@@ -85,7 +88,7 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
 
 
     @Override
-    public AjaxResult postRequest(Integer passed, String summary, Integer type, Integer requestId, Integer myId) {
+    public AjaxResult postRequest(Integer passed, String summary, Integer type, Integer requestId, Integer sysDepartment) {
         Reply reply = new Reply();
         Integer userId=0;
         reply.setType(type);
@@ -145,8 +148,24 @@ public class ReplyServiceImpl extends ServiceImpl<ReplyMapper, Reply>
         reply.setUserId(userId);
         reply.setRequestId(requestID);
         reply.setDesireTime(desireTime);
+        if (!department.equals(sysDepartment) && department!=99){
+            boolean hasAuthority = hasAuthority(department, sysDepartment);
+            if (!hasAuthority){
+                return AjaxResult.success("您所在的部门没有权限处理，请联系对应部门获取授权");
+            }
+        }
         save(reply);
         return AjaxResult.success("回复成功", applicant);
+    }
+
+    public boolean hasAuthority(Integer role1, Integer role2) {
+        int vice_department=-1;
+        Integer masterDepartment1 = departmentService.getDepartmentByID(role1).getMasterDepartment();
+        Integer masterDepartment2 = departmentService.getDepartmentByID(role2).getMasterDepartment();
+        if (masterDepartment1.equals(masterDepartment2)) {
+            return true;
+        }
+        return false;
     }
 }
 
